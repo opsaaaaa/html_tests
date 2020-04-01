@@ -5,15 +5,13 @@
   <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
   <style>
 
-    @media (prefers-color-scheme: dark){
-      :root {
-        --mute: #404040;
-        --plain: dimGray;
-        --plain-light: gray;
-        --primary: #8040bf;
-        --primary-light: #9b2fb6;
-        --gb-color: #1a1a1a;
-      }
+    :root {
+      --mute: #404040;
+      --plain: dimGray;
+      --plain-light: gray;
+      --primary: #8040bf;
+      --primary-light: #9b2fb6;
+      --gb-color: #1a1a1a;
     }
 
     @media (prefers-color-scheme: light){
@@ -26,6 +24,7 @@
         --gb-color: white;
       }
     }
+
     body { background-color: var(--gb-color); }
 
     .btn {
@@ -93,15 +92,15 @@
   </div>
   
   <div>
-    <button class="btn btn-primary">Primaray</button>
-    <a class="btn btn-primary">Link</a>
-    <button class="btn btn-primary" disabled>Disabled</button>
-  </div>
-
-  <div>
     <button class="btn btn-link">Link</button>
     <a class="btn btn-link">Link</a>
     <button class="btn btn-link" disabled>Disabled</button>
+  </div>
+
+  <div>
+    <button class="btn btn-primary">Primaray</button>
+    <a class="btn btn-primary">Link</a>
+    <button class="btn btn-primary" disabled>Disabled</button>
   </div>
 
   <div>
