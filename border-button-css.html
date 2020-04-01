@@ -5,13 +5,28 @@
   <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
   <style>
 
-    :root {
-      --mute: gray;
-      --plain: DarkSlateGray;
-      --plain-light: SlateGray;
-      --primary: RebeccaPurple;
-      --primary-light: MediumOrchid;
+    @media (prefers-color-scheme: dark){
+      :root {
+        --mute: #404040;
+        --plain: dimGray;
+        --plain-light: gray;
+        --primary: #8040bf;
+        --primary-light: #9b2fb6;
+        --gb-color: #1a1a1a;
+      }
     }
+
+    @media (prefers-color-scheme: light){
+      :root {
+        --mute: gray;
+        --plain: DarkSlateGray;
+        --plain-light: SlateGray;
+        --primary: RebeccaPurple;
+        --primary-light: MediumOrchid;
+        --gb-color: white;
+      }
+    }
+    body { background-color: var(--gb-color); }
 
     .btn {
       background-color: transparent;
@@ -27,8 +42,8 @@
       margin-bottom: 0.1em;
       top: 0.1em;
       
-      color: var(--plain-action);
-      border-color: var(--plain-action);
+      color: var(--plain);
+      border-color: var(--plain);
     }
     .btn:visited, .btn:hover, .btn-link {
       text-decoration: underline;
@@ -62,7 +77,7 @@
       color: var(--primary);
       border-color: var(--primary);
     }
-    .btn-primary:hover {
+    .btn-primary:hover, .btn-primary:active {
       border-color: var(--primary-light);
       color: var(--primary-light);
     }
