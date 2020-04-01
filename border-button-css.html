@@ -1,66 +1,99 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-div {
-  position: relative;
-}
-button {
-  background-color: transparent;
-  border-radius: 1em 1.5em 1em 1.5em;
-  font-weight: bold;
-  color: purple;
-  padding: 0.6em 2em 0.6em 2em;
-  border: 0.2em solid RebeccaPurple;
-  position: relative;
-  margin: 0.1em;
+    
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+  <style>
 
-  border-bottom: 0.5em solid;
-  margin-bottom: 0.1em;
-  top: 0.1em;
-}
-button:hover {
-  text-decoration: underline;
-  border-color: MediumOrchid;
-  color: MediumOrchid;
-  
-  border-bottom: 0.6em solid;
-  margin-bottom: 0em;
-  top: 0em;
-}
-button:active {
-  border-color: MediumOrchid;
-  color: MediumOrchid;
-  
-  border-bottom: 0.2em solid;
-  margin-bottom: 0.4em;
-  top: 0.4em;
-}
-button:disabled {
-  border-color: gray;
-  color: gray;
-  
-  border-bottom: 0.2em solid;
-  margin-bottom: 0.4em;
-  top: 0.4em;
-}
-</style>
+    :root {
+      --mute: gray;
+      --plain: DarkSlateGray;
+      --plain-light: SlateGray;
+      --primary: RebeccaPurple;
+      --primary-light: MediumOrchid;
+    }
+
+    .btn {
+      background-color: transparent;
+      border-radius: 1.5em 1.5em 1.5em 1.5em;
+      font-weight: bold;
+      padding: 0.6em 2em 0.6em 2em;
+      border: 0.2em solid;
+      margin: 0.1em;
+      border-style: solid;
+      
+      position: relative;
+      border-bottom: 0.5em solid;
+      margin-bottom: 0.1em;
+      top: 0.1em;
+      
+      color: var(--plain-action);
+      border-color: var(--plain-action);
+    }
+    .btn:visited, .btn:hover, .btn-link {
+      text-decoration: underline;
+    }
+    .btn:hover {
+      color: var(--plain-light);
+      border-color: var(--plain-light);
+
+      border-bottom: 0.6em solid;
+      margin-bottom: 0em;
+      top: 0em;
+    }
+
+    .btn:disabled, .btn:hover:disabled {
+      text-decoration: line-through;
+      border-color: var(--mute);
+      color: var(--mute);
+    }
+    .btn:active, .btn:disabled, .btn:hover:disabled {
+      border-bottom: 0.2em solid;
+      margin-bottom: 0.4em;
+      top: 0.4em;
+    }
+
+    .btn-link, .btn-link:hover, .btn-link:disabled, .btn-link:hover:disabled, .btn-link:active {
+      border: none;
+    }
+
+    .btn-primary {
+      border-radius: 1.5em 0.5em 1.5em 1.5em;
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+    .btn-primary:hover {
+      border-color: var(--primary-light);
+      color: var(--primary-light);
+    }
+
+  </style>
 </head>
 <body>
 
-    <h2>Border Button</h2>
+  <div>
+    <button class="btn">Plain</button>
+    <a class="btn" href="#">Link</a>
+    <button class="btn" disabled>Disabled</button>
+  </div>
+  
+  <div>
+    <button class="btn btn-primary">Primaray</button>
+    <a class="btn btn-primary">Link</a>
+    <button class="btn btn-primary" disabled>Disabled</button>
+  </div>
 
-    <p>A fun style of button.</p>
+  <div>
+    <button class="btn btn-link">Link</button>
+    <a class="btn btn-link">Link</a>
+    <button class="btn btn-link" disabled>Disabled</button>
+  </div>
 
-    <div>
-    <button>Save</button>
-    <button>In Div</button>
-    <button disabled>Disabled</button>
-    <button>Test</button>
-
-    </div>
-    <button>Out Div</button>
-    <p>This is to test for side effects.</p>
+  <div>
+    <button class="btn btn-primary btn-link">Primaray + Link</button>
+    <a class="btn btn-primary btn-link">Link</a>
+    <button class="btn btn-primary btn-link" disabled>Disabled</button>
+  </div>
 
 </body>
 </html>
