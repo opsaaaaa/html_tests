@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+
+    :root {
+      --mute: #404040;
+      --plain: dimGray;
+      --plain-light: gray;
+      --primary: #8040bf;
+      --primary-light: #9b2fb6;
+      --bg: #1a1a1a;
+      --bg-light: transparent;
+      --text: rgb(179, 179, 179);
+      --text-light: #eee;
+    }
+
+    @media (prefers-color-scheme: light){
+      :root {
+        --mute: gray;
+        --plain: DarkSlateGray;
+        --plain-light: SlateGray;
+        --primary: RebeccaPurple;
+        --primary-light: MediumOrchid;
+        --bg: rgb(240, 240, 240);
+        --bg-light: rgb(250, 250, 250);
+        --text: rgb(31, 31, 31);
+        --text-light: rgb(10, 10, 10);
+      }
+    }
+
+    body { background-color: var(--bg); }
+
+    label {
+      display: inline-block;
+      font-weight: bold;
+      color: var(--text);
+    }
+
+    .form-group label{
+      margin-left: 0.5em;
+    }
+
+    .form-group {
+      margin: 0.2em;
+    }
+    .form-group option {
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      border-color: var(--primary-light);
+    }
+    .form-group input, .form-group textarea, .form-group select{
+      width: 100%;
+      background-color: var(--bg-light);
+      /* background-color: var(--bg-light); */
+      border-radius: 1em 1em 1em 1em;
+      padding: 0.4em 1em 0.4em 1em;
+      border-width: 0.1em;
+      border-bottom: 0.2em solid;
+      margin: 0.2em;
+      border-style: solid;
+      
+      color: var(--text);
+      border-color: var(--plain);
+    }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus:active {
+      color: var(--text-light);
+      border-radius: 1em 1em 1em 0.2em;
+      border-width: 0.2em;
+      padding: 0.3em 0.9em 0.3em 0.9em;
+      border-bottom: 0.3em solid;
+      border-color: var(--primary);
+    }
+    .form-group input:disabled, .form-group textarea:disabled, .form-group select:disabled {
+      color: var(--mute);
+      border-color: var(--mute);
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="flex m-5">
+    <div class="flex-1">
+
+      <div class="form-group">
+          <label for="title">Title</label>
+          <input 
+              name="title" 
+              placeholder="title" 
+              type="text" 
+              value="this input"/>
+      </div>
+      
+      <div class="form-group">
+          <label for="discription">Discription</label>
+          <textarea
+              name="discription" 
+              rows="10" 
+              cols="30"
+              >test area lorem.</textarea>
+      </div>
+
+      <div class="form-group">
+
+        <label for="select">Number</label>
+        <select 
+          name="select">
+          <option value="1">one</option>
+          <option value="2">two</option>
+          <option value="3">three</option>
+          <option value="4">four</option>
+        </select>
+      </div>
+    
+    </div>
+    <div class="flex-1">
+
+      <div class="form-group">
+          <label for="d-title">Title</label>
+          <input
+              disabled 
+              name="d-title" 
+              placeholder="title" 
+              type="text" 
+              value="disabled"/>
+      </div>
+      
+      <div class="form-group">
+          <label for="d-discription">Discription</label>
+          <textarea
+              disabled
+              name="d-discription" 
+              rows="10" 
+              >disabled</textarea>
+      </div>
+     
+      <div class="form-group">
+        <label for="d-select">Number</label>
+        <select
+          disabled
+          name="d-select">
+          <option value="1">one</option>
+          <option value="2">two</option>
+          <option value="3">three</option>
+          <option value="4">four</option>
+        </select>
+      </div>
+    
+    </div> 
+    <div class="w-auto flex-1">
+
+      <div class="form-group">
+          <input type="time" value="another input"/>
+          <input type="url" value="and another"/>
+          <input type="email" value="etc"/>
+          <input type="number" value="etc"/>
+          <input type="password" value="etc"/>
+          <input type="submit" value="etc"/>
+          <input type="tel" value="etc"/>
+          <input type="search" value="etc"/>
+          <input type="radio" value="etc"/>
+          <input type="range" value="etc"/>
+      </div>
+    
+    </div>
+  </div>
+
+</body>
+</html>
