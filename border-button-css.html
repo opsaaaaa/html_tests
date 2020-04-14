@@ -9,9 +9,9 @@
     :root {
       --fill: #1a1a1a;
       --mute: #404040;
-      --scribe: dimGray;
-      --scribe-active: gray;
-      --primary: #8040bf;
+      --scribe-active: #d1d0d0;
+      --scribe: rgb(167, 167, 167);
+      --primary: #8642ca;
       --primary-active: #9b2fb6;
     }
 
@@ -20,7 +20,7 @@
         --mute: gray;
         --fill: white;
         --scribe: DarkSlateGray;
-        --scribe-active: SlateGray;
+        --scribe-active: rgb(54, 54, 54);
         --primary: RebeccaPurple;
         --primary-active: MediumOrchid;
       }
@@ -29,6 +29,11 @@
     body { 
       background-color: var(--fill); 
       padding: 3rem;
+    }
+
+    label {
+      color: var(--scribe-active);
+      display: block;
     }
 
     .btn {
@@ -109,6 +114,7 @@
 <body>
 
   <div>
+    <label>.btn</label>
     <button class="btn">Button</button>
     <a class="btn" href="#">Link</a>
     <input type="button" class="btn" value="Input"/>
@@ -116,6 +122,7 @@
   </div>
   
   <div>
+    <label>.btn.btn-link</label>
     <button class="btn btn-link">Button</button>
     <a class="btn btn-link" href="#">Link</a>
     <input type="button" class="btn btn-link" value="Input"/>
@@ -123,6 +130,7 @@
   </div>
 
   <div>
+    <label>.btn.btn-primary</label>
     <button class="btn btn-primary">Button</button>
     <a class="btn btn-primary" href="#">Link</a>
     <input type="button" class="btn btn-primary" value="Input"/>
@@ -130,6 +138,7 @@
   </div>
 
   <div>
+    <label>.btn.btn-primary.btn-link</label>
     <button class="btn btn-primary btn-link">Button</button>
     <a class="btn btn-primary btn-link" href="#">Link</a>
     <input type="button" class="btn btn-primary btn-link" value="Input"/>
