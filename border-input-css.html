@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    
+  <style>
+
+    :root {
+      --mute: #404040;
+      --plain: dimGray;
+      --plain-light: gray;
+      --primary: #8040bf;
+      --primary-light: #9b2fb6;
+      --bg: #1a1a1a;
+      --bg-light: #1a1a1a;
+      --text: rgb(179, 179, 179);
+      --text-light: #eee;
+    }
+
+    @media (prefers-color-scheme: light){
+      :root {
+        --mute: gray;
+        --plain: DarkSlateGray;
+        --plain-light: SlateGray;
+        --primary: RebeccaPurple;
+        --primary-light: MediumOrchid;
+        --bg: rgb(240, 240, 240);
+        --bg-light: rgb(250, 250, 250);
+        --text: rgb(31, 31, 31);
+        --text-light: rgb(10, 10, 10);
+      }
+    }
+
+    body { background-color: var(--bg); }
+
+    label {
+      color: var(--text);
+    }
+
+    .form-group label{
+      margin-left: 0.5em;
+    }
+
+    .form-group {
+      margin: 0.2em;
+    }
+    .form-group option, .form-group optgroup {
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      border-color: var(--primary-light);
+    }
+    .form-group input, .form-group textarea, .form-group select{
+      width: 100%;
+      background-color: var(--bg-light);
+      /* background-color: var(--bg-light); */
+      border-radius: 1em 1em 1em 1em;
+      padding: 0.4em 1em 0.4em 1em;
+      border-width: 0.1em;
+      border-bottom: 0.2em solid;
+      margin: 0.2em;
+      border-style: solid;
+      
+      color: var(--text);
+      border-color: var(--plain);
+    }
+    .form-group :required {
+      border-radius: 1em 1em 1em 0.2em;
+    }
+    .form-group input:focus, .form-group textarea:focus, .form-group :focus:active {
+      color: var(--text-light);
+      border-width: 0.2em;
+      padding: 0.3em 0.9em 0.3em 0.9em;
+      border-bottom: 0.3em solid;
+      border-color: var(--primary);
+    }
+    .form-group input:disabled, .form-group textarea:disabled, .form-group select:disabled {
+      color: var(--mute);
+      border-color: var(--mute);
+    }
+    .form-group input[type=radio], .form-group input[type=checkbox] {
+      width: 1em;
+    } 
+    .form-group ::placeholder {
+      color: var(--mute);
+    }
+
+  </style>
+</head>
+<body>
+  <div class="flex m-5">
+    <div class="flex-1">
+
+      <!-- TITLE -->
+      <div class="form-group">
+          <label for="title">Title</label>
+          <input
+              required
+              name="title" 
+              placeholder="title" 
+              type="text" 
+              value=""/>
+      </div>
+      
+      <!-- DISCRIPTION -->
+      <div class="form-group">
+          <label for="discription">Discription</label>
+          <textarea
+              name="discription" 
+              rows="10" 
+              cols="30"
+              >test area lorem.</textarea>
+      </div>
+
+    </div>
+    <div class="flex-1">
+
+      <!-- FOODS -->
+      <div class="form-group">
+        <label for="select">Food</label>
+        <select 
+          name="select">
+           <optgroup label="Vegitables"></option>
+            <option>Potato</option>
+            <option>Carrot</option>
+            <option>Celory</option>
+          </optgroup>
+          <optgroup label="Fruits">
+            <option>Apple</option>
+            <option>Melon</option>
+          </optgroup>
+          <optgroup label="Meets">
+            <option>Beef</option>
+            <option>Pork</option>
+            <option>Chicken</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <!-- SEARCH -->
+      <div class="form-group">
+        <label for="search">Search</label>
+        <input 
+          list="search" 
+          type="search" 
+          name="search"
+          >
+        <datalist id="search">
+          <option value="one"></option>
+          <option value="two"></option>
+          <option value="three"></option>
+          <option value="four"></option>
+          <option value="five"></option>
+          <option value="six"></option>
+        </datalist>
+      </div>
+
+    </div>
+
+    <!-- DISABLED -->
+    <div class="flex-1">
+      <div class="form-group">
+          <label for="d-title">Title</label>
+          <input
+              disabled 
+              name="d-title" 
+              placeholder="title" 
+              type="text" 
+              value="disabled"/>
+      </div>
+      <div class="form-group">
+          <label for="d-discription">Discription</label>
+          <textarea
+              disabled
+              name="d-discription" 
+              rows="10" 
+              >disabled</textarea>
+      </div>
+      <div class="form-group">
+        <label for="d-select">Select</label>
+        <select
+          disabled
+          name="d-select">
+          <option value="1">one</option>
+          <option value="2">two</option>
+          <option value="3">three</option>
+          <option value="4">four</option>
+        </select>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="flex m-5">
+
+    <!-- LOGIN -->
+    <div class="w-auto flex-1">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input 
+          type="email" 
+          placeholder="you@example.com" 
+          required
+          />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input 
+          type="password" 
+          required
+          />
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Login"/>
+      </div>
+    </div>
+
+    <!-- NUMBERS -->
+    <div class="w-auto flex-1">
+      <div class="form-group">
+        <label for="time">Time</label>
+        <input type="time" name="time"/>
+      </div>
+      <div class="form-group">
+        <label for="number">Number</label>
+        <input name="number" type="number" value="7"/>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input 
+          type="tel" 
+          name="phone"
+          placeholder="888-888-8888"
+          value=""/>
+      </div>
+    </div>
+
+    <div class="w-auto flex-1">
+      <!-- RANGE -->
+      <div class="form-group">
+        <label for="range">Range</label>
+        <input type="range" value="etc" name="range"/>
+      </div>
+
+      <!-- RADIO -->
+      <div class="form-group">
+        <label for="gender">Radio</label><br>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Other</label><br><br>
+      </div>
+      
+      <!-- RADIO -->
+      <div class="form-group">
+        <label for="agree">Checkbox</label><br>
+        <input type="checkbox" name="agree" value="Bike">
+        <label for="agree">I agree to the terms</label><br>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

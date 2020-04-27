@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,81 +6,107 @@
   <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
   <style>
 
-    @media (prefers-color-scheme: dark){
-      :root {
-        --mute: #404040;
-        --plain: dimGray;
-        --plain-light: gray;
-        --primary: #8040bf;
-        --primary-light: #9b2fb6;
-        --gb-color: #1a1a1a;
-      }
+    :root {
+      --fill: #1a1a1a;
+      --mute: #404040;
+      --scribe-active: #d1d0d0;
+      --scribe: rgb(167, 167, 167);
+      --primary: #8642ca;
+      --primary-active: #9b2fb6;
     }
 
     @media (prefers-color-scheme: light){
       :root {
         --mute: gray;
-        --plain: DarkSlateGray;
-        --plain-light: SlateGray;
+        --fill: white;
+        --scribe: DarkSlateGray;
+        --scribe-active: rgb(54, 54, 54);
         --primary: RebeccaPurple;
-        --primary-light: MediumOrchid;
-        --gb-color: white;
+        --primary-active: MediumOrchid;
       }
     }
-    body { background-color: var(--gb-color); }
+
+    body { 
+      background-color: var(--fill); 
+      padding: 3rem;
+    }
+
+    label {
+      color: var(--scribe-active);
+      display: block;
+    }
 
     .btn {
+      --hover: 0.1rem;
+      --depth: 0.08rem;
+      --active: 0rem;
+
+      border-radius: 0.5em;
+      width: min-content;
+      display: inline-block;
       background-color: transparent;
-      border-radius: 1.5em 1.5em 1.5em 1.5em;
       font-weight: bold;
-      padding: 0.6em 2em 0.6em 2em;
-      border: 0.2em solid;
-      margin: 0.1em;
+      padding: 0.4em 1.4em 0.4em 1.4em;
+      border: 0.15rem solid;
       border-style: solid;
+      margin: 1rem; 
+      box-sizing: border-box;
       
-      position: relative;
-      border-bottom: 0.5em solid;
-      margin-bottom: 0.1em;
-      top: 0.1em;
+      color: var(--scribe);
+      border-color: var(--scribe);
       
-      color: var(--plain);
-      border-color: var(--plain);
+      box-shadow: 0 var(--depth);
     }
-    .btn:visited, .btn:hover, .btn-link {
+ 
+    .btn:hover,
+    .btn:focus {
+      color: var(--scribe-active);
+      border-color: var(--scribe-active);
       text-decoration: underline;
-    }
-    .btn:hover {
-      color: var(--plain-light);
-      border-color: var(--plain-light);
-
-      border-bottom: 0.6em solid;
-      margin-bottom: 0em;
-      top: 0em;
+      outline: none;
+      
+      transform: translate(0, calc( ( var(--hover) ) * -1) );
+      box-shadow: 0 calc( var(--hover) + var(--depth) );
     }
 
-    .btn:disabled, .btn:hover:disabled {
-      text-decoration: line-through;
-      border-color: var(--mute);
-      color: var(--mute);
-    }
-    .btn:active, .btn:disabled, .btn:hover:disabled {
-      border-bottom: 0.2em solid;
-      margin-bottom: 0.4em;
-      top: 0.4em;
-    }
-
-    .btn-link, .btn-link:hover, .btn-link:disabled, .btn-link:hover:disabled, .btn-link:active {
-      border: none;
+    .btn:active,
+    .btn:disabled,
+    .btn:hover:disabled { 
+      transform: translate(0, calc( ( var(--depth) ) ) );
+      box-shadow: 0 calc( var(--active) + var(--depth) );
     }
 
     .btn-primary {
-      border-radius: 1.5em 0.5em 1.5em 1.5em;
       color: var(--primary);
       border-color: var(--primary);
+      border-radius: 0.5em 0em 0.5em 0.5em;
     }
-    .btn-primary:hover, .btn-primary:active {
-      border-color: var(--primary-light);
-      color: var(--primary-light);
+
+    .btn-primary:hover, 
+    .btn-primary:active, 
+    .btn-primary:focus {
+      border-color: var(--primary-active);
+      color: var(--primary-active);
+    }
+
+    .btn-link,
+    .btn-link:hover,
+    .btn-link:disabled,
+    .btn-link:hover:disabled, 
+    .btn-link:active, 
+    .brn-link:focus {
+      border: none!important;
+      box-shadow: none!important;
+    }
+   
+    .btn:disabled, 
+    .btn:disabled:hover {
+      cursor: not-allowed;
+      text-decoration: line-through;
+      border-color: var(--mute);
+      color: var(--mute);
+      transform: none;
+      box-shadow: none;
     }
 
   </style>
@@ -87,26 +114,34 @@
 <body>
 
   <div>
-    <button class="btn">Plain</button>
+    <label>.btn</label>
+    <button class="btn">Button</button>
     <a class="btn" href="#">Link</a>
+    <input type="button" class="btn" value="Input"/>
     <button class="btn" disabled>Disabled</button>
   </div>
   
   <div>
-    <button class="btn btn-primary">Primaray</button>
-    <a class="btn btn-primary">Link</a>
-    <button class="btn btn-primary" disabled>Disabled</button>
-  </div>
-
-  <div>
-    <button class="btn btn-link">Link</button>
-    <a class="btn btn-link">Link</a>
+    <label>.btn.btn-link</label>
+    <button class="btn btn-link">Button</button>
+    <a class="btn btn-link" href="#">Link</a>
+    <input type="button" class="btn btn-link" value="Input"/>
     <button class="btn btn-link" disabled>Disabled</button>
   </div>
 
   <div>
-    <button class="btn btn-primary btn-link">Primaray + Link</button>
-    <a class="btn btn-primary btn-link">Link</a>
+    <label>.btn.btn-primary</label>
+    <button class="btn btn-primary">Button</button>
+    <a class="btn btn-primary" href="#">Link</a>
+    <input type="button" class="btn btn-primary" value="Input"/>
+    <button class="btn btn-primary" disabled>Disabled</button>
+  </div>
+
+  <div>
+    <label>.btn.btn-primary.btn-link</label>
+    <button class="btn btn-primary btn-link">Button</button>
+    <a class="btn btn-primary btn-link" href="#">Link</a>
+    <input type="button" class="btn btn-primary btn-link" value="Input"/>
     <button class="btn btn-primary btn-link" disabled>Disabled</button>
   </div>
 
