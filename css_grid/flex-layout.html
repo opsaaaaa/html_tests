@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+  <style>
+
+    * {
+        line-height: 2rem;
+        margin: 0;
+        overflow:auto;
+        box-sizing: border-box;
+    }
+    body {
+        background-color: lightgray;
+    }
+    body > * {
+        margin: 2rem;
+    }
+    body * {
+        border: 3px black solid;
+        margin: 1rem;
+        padding: 1rem;
+    }
+    
+    article {
+        min-width: 25rem;
+        max-width: 40rem;
+    }
+
+    .content {
+        min-height: 40rem;
+    }
+    .side, 
+    .promo {
+        min-height: 15rem;
+    }
+    
+    .center {
+        width: auto;
+        justify-content: center;
+    }
+    .flex {
+        display: flex;
+    }
+    .auto-direction,
+    .column {
+        flex-direction: column;
+    }
+    .stretch-content {
+        align-content: stretch;
+    }
+
+    .grow {
+        flex-grow: 4;
+    }
+
+    @media (min-width: 60rem) {
+        .auto-direction {
+            flex-direction: row;
+        }
+    }
+
+  </style>
+</head>
+<body>
+
+    <div class="flex column">
+
+        <div class="flex row">
+            <nav class="nav grow">Logo and Nav bar</nav>
+
+            <div class="login">Login Bar</div>
+        </div>
+
+        <div class="article center">
+            <header>Head / Title</header>
+            <div class="flex auto-direction stretch-content">
+            
+                <main class="content grow">Content</main>
+                
+                <div class="flex column">
+
+                    <aside class="side">Side Bar</aside>
+                    <div class="promo">Promotions</div>
+                </div>
+
+            </div>
+            <div>comments</div>
+        </div>
+
+        <footer>footer</footer>        
+    </div>
+
+</body>
+</html>

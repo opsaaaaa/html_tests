@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+  <style>
+
+    * {
+        line-height: 2rem;
+        margin: 0;
+        overflow:auto;
+        box-sizing: border-box;
+    }
+    body {
+        background-color: lightgray;
+    }
+    body > * {
+        margin: 2rem;
+    }
+    body * {
+        border: 3px black solid;
+        padding: 1rem;
+    }
+    
+    .content {
+        min-height: 40rem;
+    }
+    .side, 
+    .promo {
+        min-height: 15rem;
+    }
+
+    .grid {
+        display: grid;
+        grid-row-gap: 1rem;
+        grid-column-gap: 1.5rem;
+        grid-auto-columns: 1fr;
+    }
+
+    @media (min-width: 50rem) {
+        .grid {
+            grid-template-columns: 1fr minmax(25rem, 40rem) minmax(10rem ,20rem) 1fr;
+        }
+        .content {
+            grid-column: 2 / span 1;
+            grid-row-end: span 2;
+        }
+        .side {
+            grid-column: 3 / span 1;
+        }
+        .promo {
+            grid-column: 3 / span 1;
+        }
+        .nav,
+        .login,
+        .address,
+        .info {
+            grid-column-end: span 2;
+        }
+        .header, .comments {
+            grid-column: 2 / 4;
+        }
+        .footer{
+            grid-column: 1 / 5;
+        }
+    }
+
+  </style>
+</head>
+<body>
+
+    <div class="grid">
+
+        <nav class="nav">Logo and Nav bar</nav>
+
+        <div class="login">Login Bar</div>
+
+        <header class="header">Head / Title</header>
+        
+        <main class="content">Content</main>
+        
+        <aside class="side">Side</aside>
+        
+        <div class="promo">Promotions</div>
+        
+        <div class="comments">comments</div>
+
+        <info class="info">Info</info>
+        
+        <address class="address">Address</address>
+        
+        <footer class="footer">footer</footer>
+    
+    </div>
+
+</body>
+</html>
