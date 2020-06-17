@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+
+    :root {
+      --fill: #1a1a1a;
+      --mute: #404040;
+      --scribe: dimGray;
+      --scribe-active: gray;
+      --primary: #8040bf;
+      --primary-active: #9b2fb6;
+    }
+
+    @media (prefers-color-scheme: light){
+      :root {
+        --mute: gray;
+        --fill: white;
+        --scribe: DarkSlateGray;
+        --scribe-active: SlateGray;
+        --primary: RebeccaPurple;
+        --primary-active: MediumOrchid;
+      }
+    }
+
+    body { 
+      background-color: var(--fill); 
+      padding: 3rem;
+    }
+
+    .btn {
+      --hover: 0.1rem;
+      --depth: 0.08rem;
+      --active: 0rem;
+
+      border-radius: 0.5em;
+      width: min-content;
+      display: inline-block;
+      background-color: transparent;
+      font-weight: bold;
+      padding: 0.4em 1.4em 0.4em 1.4em;
+      border: 0.15rem solid;
+      border-style: solid;
+      margin: 1rem; 
+      box-sizing: border-box;
+      
+      color: var(--scribe);
+      border-color: var(--scribe);
+      
+      box-shadow: 0 var(--depth);
+    }
+ 
+    .btn:hover,
+    .btn:focus {
+      color: var(--scribe-active);
+      border-color: var(--scribe-active);
+      text-decoration: underline;
+      outline: none;
+      
+      transform: translate(0, calc( ( var(--hover) ) * -1) );
+      box-shadow: 0 calc( var(--hover) + var(--depth) );
+    }
+
+    .btn:active,
+    .btn:disabled,
+    .btn:hover:disabled { 
+      transform: translate(0, calc( ( var(--depth) ) ) );
+      box-shadow: 0 calc( var(--active) + var(--depth) );
+    }
+
+    .btn-primary {
+      color: var(--primary);
+      border-color: var(--primary);
+      border-radius: 0.5em 0em 0.5em 0.5em;
+    }
+
+    .btn-primary:hover, 
+    .btn-primary:active, 
+    .btn-primary:focus {
+      border-color: var(--primary-active);
+      color: var(--primary-active);
+    }
+
+    .btn-link,
+    .btn-link:hover,
+    .btn-link:disabled,
+    .btn-link:hover:disabled, 
+    .btn-link:active, 
+    .brn-link:focus {
+      border: none!important;
+      box-shadow: none!important;
+    }
+   
+    .btn:disabled, 
+    .btn:disabled:hover {
+      cursor: not-allowed;
+      text-decoration: line-through;
+      border-color: var(--mute);
+      color: var(--mute);
+      transform: none;
+      box-shadow: none;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div>
+    <button class="btn">Button</button>
+    <a class="btn" href="#">Link</a>
+    <input type="button" class="btn" value="Input"/>
+    <button class="btn" disabled>Disabled</button>
+  </div>
+  
+  <div>
+    <button class="btn btn-link">Button</button>
+    <a class="btn btn-link" href="#">Link</a>
+    <input type="button" class="btn btn-link" value="Input"/>
+    <button class="btn btn-link" disabled>Disabled</button>
+  </div>
+
+  <div>
+    <button class="btn btn-primary">Button</button>
+    <a class="btn btn-primary" href="#">Link</a>
+    <input type="button" class="btn btn-primary" value="Input"/>
+    <button class="btn btn-primary" disabled>Disabled</button>
+  </div>
+
+  <div>
+    <button class="btn btn-primary btn-link">Button</button>
+    <a class="btn btn-primary btn-link" href="#">Link</a>
+    <input type="button" class="btn btn-primary btn-link" value="Input"/>
+    <button class="btn btn-primary btn-link" disabled>Disabled</button>
+  </div>
+
+</body>
+</html>

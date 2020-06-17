@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+  <style>
+
+    :root {
+      --scribe: white;
+      --fill: black;
+      --primary: #8040bf;
+    }
+
+    @media (prefers-color-scheme: light){
+      :root {
+        --scribe: rgb(41, 41, 41);
+        --fill: white;
+        --primary: RebeccaPurple;
+      }
+    }
+    h1,
+    label,
+    p {
+      color: var(--scribe);
+    }
+
+    body {
+      background-color: var(--fill);
+      outline: none;
+      /* grid-auto-rows: ; */
+      margin: 3rem;
+      display: grid;
+      grid-gap: 1em;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    
+    label {
+      display: block;
+    }
+
+    .form-group {
+      --border-size: 0.1rem;
+
+      margin: 1rem 0;
+    }
+
+    .form-group input, 
+    .form-group textarea, 
+    .form-group select{
+      width: 100%;
+      box-sizing: border-box;
+
+      padding: 0.4rem 0.8rem;
+      background-color: var(--fill);
+      color: var(--scribe);
+      /* -webkit-appearance: none; */
+      /* -moz-appearance: none; */
+      /* box-shadow: 0rem 1rem 0 -0.8rem; */
+    }
+    .form-group input[type="email"],
+    .form-group input[type="password"],
+    .form-group input[type="datetime-local"],
+    .form-group input[type="month"],
+    .form-group input[type="tel"],
+    .form-group input[type="week"],
+    .form-group input[type="url"],
+    .form-group input[type="search"],
+    .form-group input[type="text"] {
+      border: none;
+      border-bottom: var(--border-size) solid var(--scribe);
+    }
+    
+    .form-group input[type="select"],
+    .form-group input[type="color"],
+    .form-group select,
+    .form-group textarea,
+    .form-group input[type="time"],
+    .form-group input[type="date"],
+    .form-group input[type="number"] {
+      border: var(--border-size) solid var(--scribe);
+
+    }
+    .form-group input[type="submit"],
+    .form-group input[type="file"],
+    .form-group input[type="button"],
+    .form-group button {
+      display: inline-block;
+      padding: 0.4rem 1rem;
+      width: auto;
+      background-color: var(--scribe);
+      color: var(--fill);
+      border: var(--border-size) solid var(--scribe);
+      margin: 0.1rem;
+    }
+
+    .form-group textarea {
+
+    }
+
+    .form-group input[type="checkbox"] {
+      width: 1em;
+      height: 1em;
+    } 
+    .form-group input[type="radio"] {
+      width: 1em;
+      height: 1em;
+    } 
+
+
+
+
+
+  </style>
+</head>
+<body>
+
+  <div>
+    <h1>Post</h1>
+    <!-- TITLE -->
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input
+            name="title" 
+            placeholder="title" 
+            type="text" 
+            value=""/>
+    </div>
+    
+    <!-- DISCRIPTION -->
+    <div class="form-group">
+        <label for="discription">Discription</label>
+        <textarea
+            name="discription" 
+            rows="10" 
+            cols="30"
+            >test area lorem.</textarea>
+    </div>
+
+  </div>
+
+  <div>
+    <h1>Select</h1>
+
+    <!-- FOODS -->
+    <div class="form-group">
+      <label for="select">Food</label>
+      <select 
+        name="select">
+          <optgroup label="Vegitables"></option>
+          <option>Potato</option>
+          <option>Carrot</option>
+          <option>Celory</option>
+        </optgroup>
+        <optgroup label="Fruits">
+          <option>Apple</option>
+          <option>Melon</option>
+        </optgroup>
+        <optgroup label="Meets">
+          <option>Beef</option>
+          <option>Pork</option>
+          <option>Chicken</option>
+        </optgroup>
+      </select>
+    </div>
+
+    <!-- SEARCH -->
+    <div class="form-group">
+      <label for="search">Search</label>
+      <input 
+        list="search" 
+        type="search" 
+        name="search"
+        >
+      <datalist id="search">
+        <option value="one"></option>
+        <option value="two"></option>
+        <option value="three"></option>
+        <option value="four"></option>
+        <option value="five"></option>
+        <option value="six"></option>
+      </datalist>
+    </div>
+
+  </div>
+
+  <!-- DISABLED -->
+  <div>
+    <h1>Disabled</h1>
+    <div class="form-group">
+        <label for="d-title">Title</label>
+        <input
+            disabled 
+            name="d-title" 
+            placeholder="title" 
+            type="text" 
+            value="disabled"/>
+    </div>
+    <div class="form-group">
+        <label for="d-discription">Discription</label>
+        <textarea
+            disabled
+            name="d-discription" 
+            rows="10" 
+            >disabled</textarea>
+    </div>
+    <div class="form-group">
+      <label for="d-select">Select</label>
+      <select
+        disabled
+        name="d-select">
+        <option value="1">one</option>
+        <option value="2">two</option>
+        <option value="3">three</option>
+        <option value="4">four</option>
+      </select>
+    </div>
+  </div>
+
+
+
+  <!-- LOGIN -->
+  <div>
+    <h1>Login</h1>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input 
+        type="email" 
+        placeholder="you@example.com" 
+        required
+        />
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input 
+        type="password" 
+        required
+        />
+    </div>
+    <div class="form-group">
+      <input type="submit" value="Login"/>
+    </div>
+  </div>
+
+  <!-- NUMBERS -->
+  <div>
+    <h1>Numbers</h1>
+    <div class="form-group">
+      <label for="time">Time</label>
+      <input type="time" name="time"/>
+    </div>
+    <div class="form-group">
+      <label for="number">Number</label>
+      <input name="number" type="number" value="7"/>
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone Number</label>
+      <input 
+        type="tel" 
+        name="phone"
+        placeholder="888-888-8888"
+        value=""/>
+    </div>
+  </div>
+
+  <div>
+    <h1>Misc</h1>
+    <!-- RANGE -->
+    <div class="form-group">
+      <label for="range">Range</label>
+      <input type="range" value="etc" name="range"/>
+    </div>
+
+    <!-- RADIO -->
+    <div class="form-group">
+      <label for="gender">Radio</label><br>
+      <label for="male">
+        <input type="radio" id="male" name="gender" value="male">
+        Male
+      </label>
+      <label for="female">
+        <input type="radio" id="female" name="gender" value="female">
+        Female
+      </label>
+      <label for="other">
+        <input type="radio" id="other" name="gender" value="other">
+        Other
+      </label>
+    </div>
+    
+    <!-- RADIO -->
+    <div class="form-group">
+      <label for="agree">Checkbox</label>
+      <label for="agree">
+        <input type="checkbox" name="agree" value="Bike">
+        I agree to the terms
+      </label>
+    </div>
+
+  </div>
+
+  <div>
+    <h1>Buttons</h1>
+    <!-- RANGE -->
+    <div class="form-group">
+      <input type="submit" value="Submit"/>
+      <input type="button" value="Button"/>
+      <button type="button" value="Button">Button</button>
+      <input type="file" value="File"/>
+    </div>
+
+
+  </div>
+
+</body>
+</html>
