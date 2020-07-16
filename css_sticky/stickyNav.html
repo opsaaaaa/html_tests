@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    <style>
+        :root {
+            --navh: 5rem
+        }
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .hero {
+            background-color: pink;
+            height: calc( 100vh - var(--navh) );
+        }
+
+        nav {
+            height: var(--navh);
+            width: 100vw;
+            background-color: lightskyblue;
+            position: fixed;
+            bottom: 0px;
+        }
+
+        main {
+            background-color: lightcoral;
+            height: 200vh;
+        }
+
+        @media screen and ( min-width: 60rem ) {
+            nav {
+                position: sticky;
+                top: 0;
+            }
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+    <div class="hero">
+
+    </div>
+
+    <nav>
+
+    </nav>
+
+    <main>
+
+    </main>
+
+</body>
+</html>
