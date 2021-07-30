@@ -1,0 +1,81 @@
+
+$min-note-size: 15!default
+$max-count: 6!default
+$note-gap: 1!default
+$size-tag: size!default
+
+
+\:root
+    --notes-grid-auto: row dense
+    font-size: 16px
+
+\*
+    box-sizing: border-box
+
+p
+    margin: 0 0 1em 0
+
+body
+    margin: 0px
+    padding: 0px
+    background-color: #224
+
+.notes
+    display: grid
+    grid-auto-flow: var(--notes-grid-auto)
+    
+    padding: #{$note-gap}em
+    gap: #{$note-gap}em
+
+    grid-template-columns: minmax(#{$min-note-size}em,1fr)
+    grid-auto-rows: minmax(#{$min-note-size}em,auto)
+
+
+.post
+    border-radius: .5em
+    background-color: #88a
+
+    min-height: 5em
+    padding: 1em
+
+
+
+
+@mixin max-span($max)
+    [span]
+        grid-column-end: span $max    
+
+
+@function get-breakpoint($count)
+    @return #{$min-note-size * $count +$count + ($note-gap*2)}em
+
+
+
+@each $s in (1,2,3,4,5,6)
+    [#{$size-tag}$="x#{$s}"]
+        grid-row-end: span $s
+
+@each $s in (2,3,4,5,6)
+    @media screen and ( min-width: get-breakpoint($s) )
+        [#{$size-tag}]
+            grid-column-end: span $s
+        .notes
+            grid-template-columns: repeat($s, minmax(#{$min-note-size}em,1fr))
+
+@each $s in (1,2,3,4,5,6)
+    @media screen and ( min-width: get-breakpoint($s) )
+        [#{$size-tag}^="#{$s}x"]
+            grid-column-end: span $s
+
+
+
+
+@debug get-breakpoint(6)
+@debug get-breakpoint(5)
+@debug get-breakpoint(4)
+@debug get-breakpoint(3)
+
+
+
+
+
