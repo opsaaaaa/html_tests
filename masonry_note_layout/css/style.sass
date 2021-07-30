@@ -1,0 +1,50 @@
+
+\*
+    box-sizing: border-box
+
+
+body
+    margin: 0px
+    padding: 0px
+    min-width: 100vw
+    min-height: 100vh
+    background-color: #224
+
+.notes
+    padding: 1em
+
+    width: 100%
+
+    display: grid
+    gap: 1em
+    // 260px, 640px
+    grid-template-columns: repeat(auto-fill, minmax(20em,1fr))
+
+
+
+.post
+    border-radius: .5em
+    background-color: #88a
+    max-width: 40em
+
+    min-height: 5em
+
+.post:nth-child(2n) > * 
+    height: 14em
+
+.post:nth-child(3n) > *
+    height: 25em
+
+@supports (grid-template-rows: masonry)
+    .notes
+        grid-template-rows: masonry
+    // .post
+
+
+@supports not (grid-template-rows: masonry)
+    .notes
+        // grid-auto-rows: minmax(min-content, max-content)
+        // grid-auto-rows: max-content
+        
+    // .post
+    //     padding-bottom: auto
