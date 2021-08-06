@@ -1,0 +1,116 @@
+
+
+$unit: 1s
+$dist: 0.5rem
+$func: ease-in-out
+$default-delay: 0s
+
+$delays: -5, -4, -3, -2, -1, 1, 2, 3, 4, 5 
+$speeds: 1, 2, 3, 4, 5 
+
+$min: .5
+$max: 1
+
+.bland-fade, .bfade, .bf
+    // @extend %fades, %slides, %fade-and-slide, %speeds, %delays
+
+    //%fades
+    &.fade-out
+        @extend %fade-out
+        animation: $unit linear $default-delay anim-fade-out
+    &.fade-in
+        @extend %fade-in
+        animation: $unit linear $default-delay anim-fade-in
+
+    @keyframes anim-fade-in
+        0%
+            opacity: $min
+        100%
+            opacity: $max
+
+    @keyframes anim-fade-out
+        0%
+            opacity: $max
+        100%
+            opacity: $min
+
+    // %slides
+    @keyframes anim-slide-down
+        0%
+            transform: translateY(0)
+        100%
+            transform: translateY(-$dist)
+
+    @keyframes anim-slide-up
+        0%
+            transform: translateY(0)
+        100%
+            transform: translateY($dist)
+
+    @keyframes anim-slide-right
+        0%
+            transform: translateX(0)
+        100%
+            transform: translateX(-$dist)
+
+    @keyframes anim-slide-left
+        0%
+            transform: translateX(0)
+        100%
+            transform: translateX($dist)
+
+    // %fade-and-slide
+    &.fade-out-left
+        @extend %fade-out
+        animation: $unit ease-out $default-delay anim-slide-right, $unit linear $default-delay anim-fade-out
+
+    &.fade-in-left
+        @extend %fade-in
+        animation: $unit ease-in $default-delay anim-slide-left reverse, $unit linear $default-delay anim-fade-in
+
+    &.fade-in-down
+        animation: $unit ease-in $default-delay anim-slide-down reverse, $unit linear $default-delay anim-fade-in
+        @extend %fade-in
+
+    &.fade-out-down
+        @extend %fade-in
+        animation: $unit ease-out $default-delay anim-slide-up, $unit linear $default-delay anim-fade-in
+
+    &.fade-out-right
+        @extend %fade-out
+        animation: $unit ease-out $default-delay anim-slide-left, $unit linear $default-delay anim-fade-out
+
+    &.fade-in-right
+        @extend %fade-in
+        animation: $unit ease-in $default-delay anim-slide-right reverse, $unit linear $default-delay anim-fade-in
+
+    &.fade-in-up
+        animation: $unit ease-in $default-delay anim-slide-up reverse, $unit linear $default-delay anim-fade-in
+        @extend %fade-in
+
+    &.fade-out-up
+        @extend %fade-in
+        animation: $unit ease-out $default-delay anim-slide-down, $unit linear $default-delay anim-fade-in
+    
+
+    // speeds
+    @each $speed in $speeds 
+        &.f#{$speed}
+            $s: $unit / $speed
+            animation-duration: $s, $s
+        &.s-#{$speed}
+            $s: $unit * $speed
+            animation-duration: $s, $s
+
+    // delays
+    @each $delay in $delays
+        &.d#{$delay}
+            $d: $unit * $delay
+            animation-delay: $d, $d
+
+    
+%fade-in
+    opacity: $max
+
+%fade-out
+    opacity: $min
