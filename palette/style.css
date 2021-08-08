@@ -1,0 +1,25 @@
+.bg-main {
+  background: var(--bg-main); }
+
+.text-main {
+  color: var(--text-main); }
+
+html {
+  --: ; }
+
+@media (prefers-color-scheme: dark) {
+  html:not([theme]), html[theme=prefers] {
+    --bg-main: #000;
+    --text-main: #fff; } }
+html[theme=light] {
+  --bg-main: #fff;
+  --text-main: #000; }
+
+html[theme=dark] {
+  --bg-main: #000;
+  --text-main: #fff; }
+
+html {
+  --palette-toggle-themes: light, dark; }
+
+/*# sourceMappingURL=style.css.map */

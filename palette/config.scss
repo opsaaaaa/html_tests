@@ -1,0 +1,24 @@
+$palette-theme-config: (
+    'palettes': (
+        'light': (
+            'bg-main': #fff, 
+            'text-main': #000
+        ),
+        'dark': (
+            'bg-main': #000, 
+            'text-main': #fff
+        )
+    ),
+    'default-theme': 'colorful',
+    'prefers-themes': (
+        'dark': 'dark'
+    ),
+    'toggle-themes': (
+        'light': 'light',
+        'dark': 'dark'
+    ),
+    'tokens': (
+        'background': ('bg-main': 'bg-main'),
+        'color': ('text-main': 'text-main'),
+    )
+);

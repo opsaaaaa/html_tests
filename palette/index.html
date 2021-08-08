@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" theme="prefers">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+
+
+</head>
+<body class="bg-main text-main">
+    <h1>Sass Palette Generator</h1>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Aliquid nam repellendus, 
+        dicta quasi, odit adipisci laborum, 
+        nostrum reiciendis officiis ipsam aut inventore. 
+        Quaerat esse fuga cupiditate est commodi laborum quas.
+    </p>
+    <button id="palette-theme-switch">
+        Theme Switch
+    </button>
+    <script>
+
+        window.addEventListener('load', function(){
+
+            const themeAttr = 'theme';
+            const themeTag = 'html'
+            let themeElement = document.querySelector(themeTag)
+            let themeSwitch = document.querySelector('#palette-theme-switch');
+            let themes = window.getComputedStyle(themeElement).getPropertyValue('--palette-toggle-themes').trim().split(/\s*,\s*/)
+            console.log(themes)
+            let currentTheme;
+            let themeIndex;
+
+            themeSwitch.addEventListener('click', function(){
+                currentTheme = themeElement.getAttribute(themeAttr)
+                themeIndex = themes.indexOf(currentTheme)
+                
+                if (themeIndex >= themes.length - 1) {
+                    themeIndex = 0
+                } else {
+                    themeIndex += 1
+                }
+                
+                themeElement.setAttribute(themeAttr, themes[themeIndex])
+                // Store theme preference
+            },false)
+
+        }, false);
+    </script>
+</body>
+</html>

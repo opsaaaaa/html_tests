@@ -8,27 +8,32 @@ and it allows your to define themes
 
 Config
 ```scss
-$palette-themes: (
-    'light': (
-        'bg-main': #fff, 
-        'text-main': #000
-    ),
-    'dark': (
-        'bg-main': #000, 
-        'text-main': #fff
-    ), 
-    'colorful': (
-        'bg-main': #0ff, 
-        'text-main': #f00
-    )
-);
 $palette-config: (
-    'tag': 'html',
-    'default': 'dark',
+    'palettes': (
+        'light': (
+            'bg-main': #fff, 
+            'text-main': #000
+        ),
+        'dark': (
+            'bg-main': #000, 
+            'text-main': #fff
+        ), 
+        'colorful': (
+            'bg-main': #0ff, 
+            'text-main': #f00
+        )
+    ),
+    'tokens': (
+        'background': ('bg-main': 'bg-main'),
+        'color': ('text-main': 'text-main'),
+    ),
+    'default-palette': 'light',
     'prefers-color-scheme': (
         'dark': 'dark',  
     ),
-    'theme': (
+    'theme-tag': 'html',
+    'toggle-themes': (
+        'default': 'light',
         'dark': 'dark',
         'colorful': 'colorful'
     )
@@ -64,3 +69,12 @@ html[theme=dark]
 html[theme=colorful]
     --theme: colorful;
 ```
+
+Minor issue with theme toggle
+
+currently 
+when the user prefers a dark theme
+and the default then is a light theme 
+when they hit the toggle button it initially sets the theme to dark
+
+It should get the prefers theme and set it to something thats not that.

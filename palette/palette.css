@@ -1,1 +1,39 @@
-/* No CSS *//*# sourceMappingURL=palette.css.map */
+.bg-main {
+  background: var(--bg-main);
+}
+
+.text-main {
+  color: var(--text-main);
+}
+
+html {
+  --bg-main: #fff;
+  --text-main: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([theme]), html[theme=prefers] {
+    --bg-main: #000;
+    --text-main: #fff;
+  }
+}
+
+html[theme=default] {
+  --bg-main: #fff;
+  --text-main: #000;
+}
+
+html[theme=dark] {
+  --bg-main: #000;
+  --text-main: #fff;
+}
+
+html[theme=colorful] {
+  --bg-main: #0ff;
+  --text-main: #f00;
+}
+
+html {
+  --palette-toggle-themes: default, dark, colorful;
+}
+/*# sourceMappingURL=palette.css.map */

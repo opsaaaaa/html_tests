@@ -1,3 +1,90 @@
 
 
 
+$palette-theme-config: (
+    'palettes': (
+        'light': (
+            'bg-main': #fff, 
+            'text-main': #000
+        ),
+        'dark': (
+            'bg-main': #000, 
+            'text-main': #fff
+        ), 
+        'colorful': (
+            'bg-main': #0ff, 
+            'text-main': #f00
+        )
+    ),
+    'default-theme': 'light',
+    'prefers-themes': (
+        'dark': 'dark',  
+    ),
+    'toggle-themes': (
+        'default': 'light',
+        'dark': 'dark',
+        'colorful': 'colorful'
+    ),
+    'tokens': (
+        'background': ('bg-main': 'bg-main'),
+        'color': ('text-main': 'text-main'),
+    )
+)!default;
+
+// Functions
+@function palette-config($key) {
+    @return map-get($palette-theme-config, $key);
+};
+
+@function get-palette($key) {
+    @return map-get( map-get($palette-theme-config, 'palettes'), $key );
+};
+
+// Mixin
+@mixin palette-theme($paletteName) {
+    @each $key, $val in get-palette($paletteName) {
+        --#{$key}: #{$val};
+    }; 
+}
+
+
+// Handle Tokens
+@if palette-config('tokens') {
+    @each $property, $tokens in palette-config('tokens') {
+        @each $tokenName, $varName in $tokens {
+            .#{$tokenName} {
+                #{$property}: var(--#{$varName});
+            }
+        };
+    };
+};
+
+// Handle Default Theme
+html {
+    @include palette-theme(palette-config('default-theme'));
+}
+
+// Handle Prefers Theme
+@if palette-config('prefers-themes') {
+    @each $schemeName, $paletteName in palette-config('prefers-themes') {
+        @media (prefers-color-scheme: #{$schemeName}){
+            html:not([theme]), html[theme=prefers] {
+                @include palette-theme($paletteName);
+            }
+        };
+    };
+};
+
+// Handle Html Theme
+@if palette-config('toggle-themes') {
+    @each $themeName, $paletteName in palette-config('toggle-themes') {
+        html[theme=#{$themeName}] {
+            @include palette-theme($paletteName)
+        }
+    };
+    html {
+        --palette-toggle-themes: #{map-keys(palette-config('toggle-themes'))};
+    } 
+};
+
+
