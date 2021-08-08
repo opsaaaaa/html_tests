@@ -1,0 +1,282 @@
+.bland-fade.fade-out, .bfade.fade-out, .bf.fade-out {
+  -webkit-animation: 1s linear 0s anim-fade-out;
+          animation: 1s linear 0s anim-fade-out;
+}
+
+.bland-fade.fade-in, .bfade.fade-in, .bf.fade-in {
+  -webkit-animation: 1s linear 0s anim-fade-in;
+          animation: 1s linear 0s anim-fade-in;
+}
+
+@-webkit-keyframes anim-fade-in {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes anim-fade-in {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes anim-fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes anim-fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@-webkit-keyframes anim-slide-down {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-0.5rem);
+            transform: translateY(-0.5rem);
+  }
+}
+
+@keyframes anim-slide-down {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-0.5rem);
+            transform: translateY(-0.5rem);
+  }
+}
+
+@-webkit-keyframes anim-slide-up {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(0.5rem);
+            transform: translateY(0.5rem);
+  }
+}
+
+@keyframes anim-slide-up {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(0.5rem);
+            transform: translateY(0.5rem);
+  }
+}
+
+@-webkit-keyframes anim-slide-right {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-0.5rem);
+            transform: translateX(-0.5rem);
+  }
+}
+
+@keyframes anim-slide-right {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-0.5rem);
+            transform: translateX(-0.5rem);
+  }
+}
+
+@-webkit-keyframes anim-slide-left {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(0.5rem);
+            transform: translateX(0.5rem);
+  }
+}
+
+@keyframes anim-slide-left {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(0.5rem);
+            transform: translateX(0.5rem);
+  }
+}
+
+.bland-fade.fade-out-left, .bfade.fade-out-left, .bf.fade-out-left {
+  -webkit-animation: 1s ease-out 0s anim-slide-right, 1s linear 0s anim-fade-out;
+          animation: 1s ease-out 0s anim-slide-right, 1s linear 0s anim-fade-out;
+}
+
+.bland-fade.fade-in-left, .bfade.fade-in-left, .bf.fade-in-left {
+  -webkit-animation: 1s ease-in 0s anim-slide-left reverse, 1s linear 0s anim-fade-in;
+          animation: 1s ease-in 0s anim-slide-left reverse, 1s linear 0s anim-fade-in;
+}
+
+.bland-fade.fade-in-down, .bfade.fade-in-down, .bf.fade-in-down {
+  -webkit-animation: 1s ease-in 0s anim-slide-down reverse, 1s linear 0s anim-fade-in;
+          animation: 1s ease-in 0s anim-slide-down reverse, 1s linear 0s anim-fade-in;
+}
+
+.bland-fade.fade-out-down, .bfade.fade-out-down, .bf.fade-out-down {
+  -webkit-animation: 1s ease-out 0s anim-slide-up, 1s linear 0s anim-fade-in;
+          animation: 1s ease-out 0s anim-slide-up, 1s linear 0s anim-fade-in;
+}
+
+.bland-fade.fade-out-right, .bfade.fade-out-right, .bf.fade-out-right {
+  -webkit-animation: 1s ease-out 0s anim-slide-left, 1s linear 0s anim-fade-out;
+          animation: 1s ease-out 0s anim-slide-left, 1s linear 0s anim-fade-out;
+}
+
+.bland-fade.fade-in-right, .bfade.fade-in-right, .bf.fade-in-right {
+  -webkit-animation: 1s ease-in 0s anim-slide-right reverse, 1s linear 0s anim-fade-in;
+          animation: 1s ease-in 0s anim-slide-right reverse, 1s linear 0s anim-fade-in;
+}
+
+.bland-fade.fade-in-up, .bfade.fade-in-up, .bf.fade-in-up {
+  -webkit-animation: 1s ease-in 0s anim-slide-up reverse, 1s linear 0s anim-fade-in;
+          animation: 1s ease-in 0s anim-slide-up reverse, 1s linear 0s anim-fade-in;
+}
+
+.bland-fade.fade-out-up, .bfade.fade-out-up, .bf.fade-out-up {
+  -webkit-animation: 1s ease-out 0s anim-slide-down, 1s linear 0s anim-fade-in;
+          animation: 1s ease-out 0s anim-slide-down, 1s linear 0s anim-fade-in;
+}
+
+.bland-fade.f1, .bfade.f1, .bf.f1 {
+  -webkit-animation-duration: 1s, 1s;
+          animation-duration: 1s, 1s;
+}
+
+.bland-fade.s-1, .bfade.s-1, .bf.s-1 {
+  -webkit-animation-duration: 1s, 1s;
+          animation-duration: 1s, 1s;
+}
+
+.bland-fade.f2, .bfade.f2, .bf.f2 {
+  -webkit-animation-duration: 0.5s, 0.5s;
+          animation-duration: 0.5s, 0.5s;
+}
+
+.bland-fade.s-2, .bfade.s-2, .bf.s-2 {
+  -webkit-animation-duration: 2s, 2s;
+          animation-duration: 2s, 2s;
+}
+
+.bland-fade.f3, .bfade.f3, .bf.f3 {
+  -webkit-animation-duration: 0.33333s, 0.33333s;
+          animation-duration: 0.33333s, 0.33333s;
+}
+
+.bland-fade.s-3, .bfade.s-3, .bf.s-3 {
+  -webkit-animation-duration: 3s, 3s;
+          animation-duration: 3s, 3s;
+}
+
+.bland-fade.f4, .bfade.f4, .bf.f4 {
+  -webkit-animation-duration: 0.25s, 0.25s;
+          animation-duration: 0.25s, 0.25s;
+}
+
+.bland-fade.s-4, .bfade.s-4, .bf.s-4 {
+  -webkit-animation-duration: 4s, 4s;
+          animation-duration: 4s, 4s;
+}
+
+.bland-fade.f5, .bfade.f5, .bf.f5 {
+  -webkit-animation-duration: 0.2s, 0.2s;
+          animation-duration: 0.2s, 0.2s;
+}
+
+.bland-fade.s-5, .bfade.s-5, .bf.s-5 {
+  -webkit-animation-duration: 5s, 5s;
+          animation-duration: 5s, 5s;
+}
+
+.bland-fade.d-5, .bfade.d-5, .bf.d-5 {
+  -webkit-animation-delay: -5s, -5s;
+          animation-delay: -5s, -5s;
+}
+
+.bland-fade.d-4, .bfade.d-4, .bf.d-4 {
+  -webkit-animation-delay: -4s, -4s;
+          animation-delay: -4s, -4s;
+}
+
+.bland-fade.d-3, .bfade.d-3, .bf.d-3 {
+  -webkit-animation-delay: -3s, -3s;
+          animation-delay: -3s, -3s;
+}
+
+.bland-fade.d-2, .bfade.d-2, .bf.d-2 {
+  -webkit-animation-delay: -2s, -2s;
+          animation-delay: -2s, -2s;
+}
+
+.bland-fade.d-1, .bfade.d-1, .bf.d-1 {
+  -webkit-animation-delay: -1s, -1s;
+          animation-delay: -1s, -1s;
+}
+
+.bland-fade.d1, .bfade.d1, .bf.d1 {
+  -webkit-animation-delay: 1s, 1s;
+          animation-delay: 1s, 1s;
+}
+
+.bland-fade.d2, .bfade.d2, .bf.d2 {
+  -webkit-animation-delay: 2s, 2s;
+          animation-delay: 2s, 2s;
+}
+
+.bland-fade.d3, .bfade.d3, .bf.d3 {
+  -webkit-animation-delay: 3s, 3s;
+          animation-delay: 3s, 3s;
+}
+
+.bland-fade.d4, .bfade.d4, .bf.d4 {
+  -webkit-animation-delay: 4s, 4s;
+          animation-delay: 4s, 4s;
+}
+
+.bland-fade.d5, .bfade.d5, .bf.d5 {
+  -webkit-animation-delay: 5s, 5s;
+          animation-delay: 5s, 5s;
+}
+
+.bland-fade.fade-in, .bfade.fade-in, .bf.fade-in, .bland-fade.fade-in-left, .bfade.fade-in-left, .bf.fade-in-left, .bland-fade.fade-in-down, .bfade.fade-in-down, .bf.fade-in-down, .bland-fade.fade-out-down, .bfade.fade-out-down, .bf.fade-out-down, .bland-fade.fade-in-right, .bfade.fade-in-right, .bf.fade-in-right, .bland-fade.fade-in-up, .bfade.fade-in-up, .bf.fade-in-up, .bland-fade.fade-out-up, .bfade.fade-out-up, .bf.fade-out-up {
+  opacity: 1;
+}
+
+.bland-fade.fade-out, .bfade.fade-out, .bf.fade-out, .bland-fade.fade-out-left, .bfade.fade-out-left, .bf.fade-out-left, .bland-fade.fade-out-right, .bfade.fade-out-right, .bf.fade-out-right {
+  opacity: 0.5;
+}
+/*# sourceMappingURL=bland-fade.css.map */
