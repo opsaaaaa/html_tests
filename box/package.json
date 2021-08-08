@@ -1,0 +1,14 @@
+{
+  "name": "box",
+  "version": "1.0.0",
+  "description": "ok so what is box ?",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gorko": "^0.7.1"
+  }
+}

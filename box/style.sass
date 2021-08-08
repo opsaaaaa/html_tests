@@ -1,0 +1,43 @@
+@import config
+@import node_modules/gorko/gorko
+
+*
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+
+\:root
+    --gap: 1em
+    --mar: 1em
+    --pad: 1em
+
+
+.hbox
+    display: grid
+    grid-auto-flow: column
+    gap: var(--gap)
+
+.vbox
+    display: grid
+    grid-auto-flow: row
+    gap: var(--gap)
+
+.mbox
+    margin: var(--mar)
+.pbox
+    margin: var(--pad)
+
+.min-width-screen
+    min-width: 100vw
+.min-height-screen
+    min-height: 100vh
+.min-width-full
+    min-width: 100%
+.min-height-full
+    min-height: 100%
+
+.-hstart
+    justify-content: start
+
+.-cols-1fr
+    grid-auto-columns: 1fr

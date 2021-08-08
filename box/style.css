@@ -1,0 +1,234 @@
+/* GORKO: auto-generated utility classes start */
+.gap-300 {
+  gap: 0.8rem;
+}
+
+.gap-400 {
+  gap: 1rem;
+}
+
+.gap-500 {
+  gap: 1.25rem;
+}
+
+.gap-600 {
+  gap: 1.6rem;
+}
+
+.gap-700 {
+  gap: 2rem;
+}
+
+.gap-900 {
+  gap: 3rem;
+}
+
+.hspan-1 {
+  -ms-grid-column-span: 1;
+      grid-column-end: span 1;
+}
+
+.hspan-2 {
+  -ms-grid-column-span: 2;
+      grid-column-end: span 2;
+}
+
+.hspan-3 {
+  -ms-grid-column-span: 3;
+      grid-column-end: span 3;
+}
+
+.hspan-4 {
+  -ms-grid-column-span: 4;
+      grid-column-end: span 4;
+}
+
+.hspan-5 {
+  -ms-grid-column-span: 5;
+      grid-column-end: span 5;
+}
+
+.hspan-6 {
+  -ms-grid-column-span: 6;
+      grid-column-end: span 6;
+}
+
+.vspan-1 {
+  -ms-grid-row-span: 1;
+      grid-row-end: span 1;
+}
+
+.vspan-2 {
+  -ms-grid-row-span: 2;
+      grid-row-end: span 2;
+}
+
+.vspan-3 {
+  -ms-grid-row-span: 3;
+      grid-row-end: span 3;
+}
+
+.vspan-4 {
+  -ms-grid-row-span: 4;
+      grid-row-end: span 4;
+}
+
+.vspan-5 {
+  -ms-grid-row-span: 5;
+      grid-row-end: span 5;
+}
+
+.vspan-6 {
+  -ms-grid-row-span: 6;
+      grid-row-end: span 6;
+}
+
+.hbox-start {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+.hbox-end {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+.hbox-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.hbox-normal {
+  -webkit-box-pack: normal;
+      -ms-flex-pack: normal;
+          justify-content: normal;
+}
+
+.hbox-between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.hbox-around {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.hbox-evenly {
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.hbox-stretch {
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+}
+
+.vbox-start {
+  -ms-flex-line-pack: start;
+      align-content: start;
+}
+
+.vbox-end {
+  -ms-flex-line-pack: end;
+      align-content: end;
+}
+
+.vbox-center {
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.vbox-normal {
+  -ms-flex-line-pack: normal;
+      align-content: normal;
+}
+
+.vbox-between {
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+}
+
+.vbox-around {
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+}
+
+.vbox-evenly {
+  -ms-flex-line-pack: space-evenly;
+      align-content: space-evenly;
+}
+
+.vbox-stretch {
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
+}
+
+/* GORKO: auto-generated utility classes end */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --gap: 1em;
+  --mar: 1em;
+  --pad: 1em;
+}
+
+.hbox {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-flow: column;
+  gap: var(--gap);
+}
+
+.vbox {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-flow: row;
+  gap: var(--gap);
+}
+
+.mbox {
+  margin: var(--mar);
+}
+
+.pbox {
+  margin: var(--pad);
+}
+
+.min-width-screen {
+  min-width: 100vw;
+}
+
+.min-height-screen {
+  min-height: 100vh;
+}
+
+.min-width-full {
+  min-width: 100%;
+}
+
+.min-height-full {
+  min-height: 100%;
+}
+
+.-hstart {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+.-cols-1fr {
+  grid-auto-columns: 1fr;
+}
+/*# sourceMappingURL=style.css.map */

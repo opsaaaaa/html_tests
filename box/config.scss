@@ -1,0 +1,69 @@
+
+$gorko-base-size: 1rem;
+
+$gorko-size-scale: (
+  '300': $gorko-base-size * 0.8,
+  '400': $gorko-base-size,
+  '500': $gorko-base-size * 1.25,
+  '600': $gorko-base-size * 1.6,
+  '700': $gorko-base-size * 2,
+  '900': $gorko-base-size * 3
+);
+
+$span-one-six: (
+    '1': 'span 1',
+    '2': 'span 2',
+    '3': 'span 3',
+    '4': 'span 4',
+    '5': 'span 5',
+    '6': 'span 6',
+);
+
+$justify-align-content: (
+    'start': 'start',
+    'end': 'end',
+    'center': 'center',
+    'normal': 'normal',
+    'between': 'space-between',
+    'around': 'space-around',
+    'evenly': 'space-evenly',
+    'stretch': 'stretch'
+);
+
+$gorko-colors: (
+  'dark': #1a1a1a,
+  'light': #f3f3f3
+);
+
+$gorko-config: ( 
+    'gap': (
+        'items': $gorko-size-scale,
+        'output': 'standard',
+        'property': 'gap'
+    ),
+    'hspan': (
+        'items': $span-one-six,
+        'output': 'standard',
+        'property': 'grid-column-end'
+    ),
+    'vspan': (
+        'items': $span-one-six,
+        'output': 'standard',
+        'property': 'grid-row-end'
+    ),
+    'hbox': (
+        'items': $justify-align-content,
+        'output': 'standard',
+        'property': 'justify-content'
+    ),
+    'vbox': (
+        'items': $justify-align-content,
+        'output': 'standard',
+        'property': 'align-content'
+    ),
+    'breakpoints': (
+        'sm': '(min-width: 36em)',
+        'md': '(min-width: 48em)',
+        'lg': '(min-width: 62em)'
+    )
+);
