@@ -26,17 +26,33 @@
 
         window.addEventListener('load', function(){
 
-            const themeAttr = 'theme';
-            const themeTag = 'html'
-            let themeElement = document.querySelector(themeTag)
+            let themeElement = document.querySelector('html')
             let themeSwitch = document.querySelector('#palette-theme-switch');
             let themes = window.getComputedStyle(themeElement).getPropertyValue('--palette-toggle-themes').trim().split(/\s*,\s*/)
             console.log(themes)
             let currentTheme;
             let themeIndex;
+            let prefersDarkTheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+            // Choose theme method stores the value in the browser and updates the html tag
+
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(v){
+                prefersDarkTheme = v
+                themeElement.setAttribute('theme', 'prefers')
+            });
 
             themeSwitch.addEventListener('click', function(){
-                currentTheme = themeElement.getAttribute(themeAttr)
+
+                currentTheme = themeElement.getAttribute('theme')
+
+                if ([null, undefined, 'prefers', 'default'].indexOf(currentTheme) > -1) {
+                    if (prefersDarkTheme) {
+                        currentTheme = 'dark'
+                    } else {
+                        currentTheme = 'light'
+                    }
+                }
+
                 themeIndex = themes.indexOf(currentTheme)
                 
                 if (themeIndex >= themes.length - 1) {
@@ -45,7 +61,7 @@
                     themeIndex += 1
                 }
                 
-                themeElement.setAttribute(themeAttr, themes[themeIndex])
+                themeElement.setAttribute('theme', themes[themeIndex])
                 // Store theme preference
             },false)
 
