@@ -62,9 +62,9 @@ $gap: 1rem
 .mason-auto > *:nth-child(5n)
     --span-c: 3
 
-@for $s from 0 through 2
-    [brick-span^="#{$s}:"]
-        --span-b: #{$s}
+@for $s from 0 through 3
+    [brick-size^="#{$s}/"]
+        --span-b: #{$s}!important
 @for $s from 0 through $cut
-    [brick-span$=":#{$s}"]
-        --span-c: #{$s}
+    [brick-size$="/#{$s}"]
+        --span-c: #{$s}!important

@@ -65,31 +65,35 @@ body {
   --span-c: 3;
 }
 
-[brick-span^="0:"] {
-  --span-b: 0;
+[brick-size^="0/"] {
+  --span-b: 0!important;
 }
 
-[brick-span^="1:"] {
-  --span-b: 1;
+[brick-size^="1/"] {
+  --span-b: 1!important;
 }
 
-[brick-span^="2:"] {
-  --span-b: 2;
+[brick-size^="2/"] {
+  --span-b: 2!important;
 }
 
-[brick-span$=":0"] {
-  --span-c: 0;
+[brick-size^="3/"] {
+  --span-b: 3!important;
 }
 
-[brick-span$=":1"] {
-  --span-c: 1;
+[brick-size$="/0"] {
+  --span-c: 0!important;
 }
 
-[brick-span$=":2"] {
-  --span-c: 2;
+[brick-size$="/1"] {
+  --span-c: 1!important;
 }
 
-[brick-span$=":3"] {
-  --span-c: 3;
+[brick-size$="/2"] {
+  --span-c: 2!important;
+}
+
+[brick-size$="/3"] {
+  --span-c: 3!important;
 }
 /*# sourceMappingURL=style.css.map */
