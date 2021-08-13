@@ -41,7 +41,7 @@ body {
   -ms-grid-columns: (18rem)[auto-fill];
       grid-template-columns: repeat(auto-fill, 18rem);
   grid-auto-rows: calc(calc(var(--gap) + var(--brick) - var(--gap)*var(--cut)) / var(--cut));
-  gap: 1em;
+  gap: var(--gap);
   grid-auto-flow: row dense;
   -webkit-box-pack: center;
       -ms-flex-pack: center;

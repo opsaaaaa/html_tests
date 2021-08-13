@@ -21,6 +21,7 @@ body
     background-color: #224
     border-radius: 1em
     padding: .5em
+    // margin: 0.5em
 
 $brick: 18rem
 $cut: 3
@@ -42,7 +43,7 @@ $gap: 1rem
     // grid-auto-rows: ($gap + $brick - $gap*$cut) / $cut
     grid-auto-rows: calc(calc(var(--gap) + var(--brick) - var(--gap)*var(--cut)) / var(--cut))
     
-    gap: 1em
+    gap: var(--gap)
     
     grid-auto-flow: row dense
     justify-content: center
