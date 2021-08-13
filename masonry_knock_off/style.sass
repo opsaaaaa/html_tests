@@ -32,7 +32,10 @@ $gap: 1rem
 .mason
     --gap: #{$gap}    
     --cut: #{$cut}
-    --brick: #{$brick}    
+    --brick: #{$brick}
+    // --brick-span: calc(var(--span-b) * var(--cut) + var(--span-c))
+    --span-b: 1 
+    --span-c: 0
     
     display: grid
     grid-template-columns: repeat(auto-fill, #{$brick})
@@ -46,17 +49,22 @@ $gap: 1rem
 
 
 .mason > *
+    // --brick-span: calc(var(--span-b) * var(--cut) + var(--span-c))
     // grid-row-end: span $cut
-    grid-row-end: span var(--cut)
+    grid-row-end: span calc(var(--span-b) * var(--cut) + var(--span-c))
+    // grid-row-end: span var(--brick-span)
 
-.brick:nth-child(2n)
-    grid-row-end: span $cut + 1
-.brick:nth-child(4n)
-    grid-row-end: span $cut + 2
-.brick:nth-child(5n)
-    grid-row-end: span $cut + 3
 
-// @each $s in (1,2,3,4,5,6)
-//     [span$="#{$s}"]
-//         --row-span: #{$s + 1} 
-//         grid-row-end: span $s + 1
+.mason-auto > *:nth-child(2n)
+    --span-c: 1
+.mason-auto > *:nth-child(4n)
+    --span-c: 2
+.mason-auto > *:nth-child(5n)
+    --span-c: 3
+
+@for $s from 0 through 2
+    [brick-span^="#{$s}:"]
+        --span-b: #{$s}
+@for $s from 0 through $cut
+    [brick-span$=":#{$s}"]
+        --span-c: #{$s}

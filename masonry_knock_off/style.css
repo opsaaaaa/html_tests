@@ -34,6 +34,8 @@ body {
   --gap: 1rem;
   --cut: 3;
   --brick: 18rem;
+  --span-b: 1;
+  --span-c: 0;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (18rem)[auto-fill];
@@ -47,22 +49,47 @@ body {
 }
 
 .mason > * {
-  -ms-grid-row-span: var(--cut);
-      grid-row-end: span var(--cut);
+  -ms-grid-row-span: calc(var(--span-b) * var(--cut) + var(--span-c));
+      grid-row-end: span calc(var(--span-b) * var(--cut) + var(--span-c));
 }
 
-.brick:nth-child(2n) {
-  -ms-grid-row-span: 4;
-      grid-row-end: span 4;
+.mason-auto > *:nth-child(2n) {
+  --span-c: 1;
 }
 
-.brick:nth-child(4n) {
-  -ms-grid-row-span: 5;
-      grid-row-end: span 5;
+.mason-auto > *:nth-child(4n) {
+  --span-c: 2;
 }
 
-.brick:nth-child(5n) {
-  -ms-grid-row-span: 6;
-      grid-row-end: span 6;
+.mason-auto > *:nth-child(5n) {
+  --span-c: 3;
+}
+
+[brick-span^="0:"] {
+  --span-b: 0;
+}
+
+[brick-span^="1:"] {
+  --span-b: 1;
+}
+
+[brick-span^="2:"] {
+  --span-b: 2;
+}
+
+[brick-span$=":0"] {
+  --span-c: 0;
+}
+
+[brick-span$=":1"] {
+  --span-c: 1;
+}
+
+[brick-span$=":2"] {
+  --span-c: 2;
+}
+
+[brick-span$=":3"] {
+  --span-c: 3;
 }
 /*# sourceMappingURL=style.css.map */
