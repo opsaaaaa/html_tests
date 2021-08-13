@@ -1,0 +1,68 @@
+:root {
+  --notes-grid-auto: row dense;
+  font-size: 16px;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+p {
+  margin: 0 0 1em 0;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  color: #fff;
+  background-color: #002;
+  line-height: 1.5em;
+}
+
+.brick {
+  background-color: #224;
+  border-radius: 1em;
+  padding: .5em;
+}
+
+.m {
+  margin: 1rem;
+}
+
+.mason {
+  --gap: 1rem;
+  --cut: 3;
+  --brick: 18rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (18rem)[auto-fill];
+      grid-template-columns: repeat(auto-fill, 18rem);
+  grid-auto-rows: calc(calc(var(--gap) + var(--brick) - var(--gap)*var(--cut)) / var(--cut));
+  gap: 1em;
+  grid-auto-flow: row dense;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.mason > * {
+  -ms-grid-row-span: var(--cut);
+      grid-row-end: span var(--cut);
+}
+
+.brick:nth-child(2n) {
+  -ms-grid-row-span: 4;
+      grid-row-end: span 4;
+}
+
+.brick:nth-child(4n) {
+  -ms-grid-row-span: 5;
+      grid-row-end: span 5;
+}
+
+.brick:nth-child(5n) {
+  -ms-grid-row-span: 6;
+      grid-row-end: span 6;
+}
+/*# sourceMappingURL=style.css.map */
