@@ -35,26 +35,40 @@ $gap: 1rem
     --cut: #{$cut}
     --brick: #{$brick}
     // --brick-span: calc(var(--span-b) * var(--cut) + var(--span-c))
-    --span-b: 1 
+    --span-b: 1
     --span-c: 0
     
-    display: grid
+    display: grid    
+    gap: var(--gap)
+    justify-content: center
+    grid-auto-flow: row dense
+
+.mason-vertical
     grid-template-columns: repeat(auto-fill, #{$brick})
     // grid-auto-rows: ($gap + $brick - $gap*$cut) / $cut
     grid-auto-rows: calc(calc(var(--gap) + var(--brick) - var(--gap)*var(--cut)) / var(--cut))
-    
-    gap: var(--gap)
-    
-    grid-auto-flow: row dense
-    justify-content: center
 
-
-.mason > *
+.mason-vertical > *
     // --brick-span: calc(var(--span-b) * var(--cut) + var(--span-c))
     // grid-row-end: span $cut
     grid-row-end: span calc(var(--span-b) * var(--cut) + var(--span-c))
     // grid-row-end: span var(--brick-span)
 
+.mason-horizontal
+    $cut-brick-size: $brick / $cut
+    $cut-brick-column: ()
+
+    @for $c from 1 through $cut
+        $cut-brick-column: (#{$cut-brick-column} $brick / $cut)
+
+    // grid-template-columns: repeat(auto-fill, #{$cut-brick-column}) 
+    grid-template-columns: repeat(auto-fill, #{$cut-brick-size}) 
+    grid-auto-rows: $brick
+
+.mason-horizontal > *
+    --span-total: calc(var(--span-b) * var(--cut) + var(--span-c))
+    // grid-column-end: span $cut
+    grid-column-end: span var(--span-total)
 
 .mason-auto > *:nth-child(2n)
     --span-c: 1
@@ -63,9 +77,22 @@ $gap: 1rem
 .mason-auto > *:nth-child(5n)
     --span-c: 3
 
+@media (max-width: #{$brick*2 + $gap*3})
+    .mason-horizontal.mason-auto > *:nth-child(2n)
+        --span-c: 0
+    .mason-horizontal.mason-auto > *:nth-child(4n)
+        --span-c: 0
+    .mason-horizontal.mason-auto > *:nth-child(5n)
+        --span-c: 0
+    .mason-horizontal
+        grid-template-columns: 1fr 
+
 @for $s from 0 through 3
     [brick-size^="#{$s}/"]
         --span-b: #{$s}!important
 @for $s from 0 through $cut
     [brick-size$="/#{$s}"]
         --span-c: #{$s}!important
+
+
+

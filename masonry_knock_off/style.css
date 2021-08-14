@@ -38,19 +38,34 @@ body {
   --span-c: 0;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (18rem)[auto-fill];
-      grid-template-columns: repeat(auto-fill, 18rem);
-  grid-auto-rows: calc(calc(var(--gap) + var(--brick) - var(--gap)*var(--cut)) / var(--cut));
   gap: var(--gap);
-  grid-auto-flow: row dense;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  grid-auto-flow: row dense;
 }
 
-.mason > * {
+.mason-vertical {
+  -ms-grid-columns: (18rem)[auto-fill];
+      grid-template-columns: repeat(auto-fill, 18rem);
+  grid-auto-rows: calc(calc(var(--gap) + var(--brick) - var(--gap)*var(--cut)) / var(--cut));
+}
+
+.mason-vertical > * {
   -ms-grid-row-span: calc(var(--span-b) * var(--cut) + var(--span-c));
       grid-row-end: span calc(var(--span-b) * var(--cut) + var(--span-c));
+}
+
+.mason-horizontal {
+  -ms-grid-columns: (6rem)[auto-fill];
+      grid-template-columns: repeat(auto-fill, 6rem);
+  grid-auto-rows: 18rem;
+}
+
+.mason-horizontal > * {
+  --span-total: calc(var(--span-b) * var(--cut) + var(--span-c));
+  -ms-grid-column-span: var(--span-total);
+      grid-column-end: span var(--span-total);
 }
 
 .mason-auto > *:nth-child(2n) {
@@ -63,6 +78,22 @@ body {
 
 .mason-auto > *:nth-child(5n) {
   --span-c: 3;
+}
+
+@media (max-width: 39rem) {
+  .mason-horizontal.mason-auto > *:nth-child(2n) {
+    --span-c: 0;
+  }
+  .mason-horizontal.mason-auto > *:nth-child(4n) {
+    --span-c: 0;
+  }
+  .mason-horizontal.mason-auto > *:nth-child(5n) {
+    --span-c: 0;
+  }
+  .mason-horizontal {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
 }
 
 [brick-size^="0/"] {
