@@ -1,0 +1,17 @@
+
+$brick: 18rem!default
+$cuts: 3!default
+$gap: 1rem!default
+
+.something
+    --gap: #{$gap}
+    --cuts: #{$cuts}
+    --brick: #{$brick}
+
+@function thing1
+    @return "thing2"
+    
+// @import "core";
+// @import "styles";
+// @import "vertical";
+// @import "horizontal";

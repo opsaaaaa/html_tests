@@ -1,0 +1,21 @@
+
+
+
+// @use 'mason' as ma;
+// @debug ma.thing1();
+// @use 'sass:math' as m;
+@use 'sass:math';
+$half: math.percentage(math.div(1,2));
+@debug $half;
+// @debug m-percentage(1/2);
+// $thing: mason.$cuts;
+
+// @debug $thing;
+
+// @import config.scss
+// @import mason/core.sass
+// @import mason/styles.sass
+// @import mason/vertical.sass
+// @import mason/horizontal.sass
+
+

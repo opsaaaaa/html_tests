@@ -1,0 +1,24 @@
+.mason
+    --gap: #{mason-config('gap')}    
+    --cut: #{mason-config('cuts')}
+    --brick: #{mason-config('brick')}
+    // --brick-span: calc(var(--span-b) * var(--cut) + var(--span-c))
+    --span-b: 1
+    --span-c: 0
+    
+    display: grid    
+    gap: mason-config('gap')
+    justify-content: center
+    grid-auto-flow: row dense
+
+@each $nth, $val in mason-config('auto')
+    .mason-auto > *:nth-child(#{$nth})
+        --span-c: #{$val}
+
+@for $s from 0 through 3
+    [brick-size^="#{$s}/"]
+        --span-b: #{$s}!important
+@for $s from 0 through $cut
+    [brick-size$="/#{$s}"]
+        --span-c: #{$s}!important
+

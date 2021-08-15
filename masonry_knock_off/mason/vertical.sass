@@ -1,0 +1,16 @@
+$brick: 6rem !default
+$cut: 2 !default
+$gap: 1rem !default
+
+@function mason-gap-ajusted
+
+.mason-vertical
+    grid-template-columns: repeat(auto-fill, #{$brick})
+    grid-auto-rows: ($gap + $brick - $gap*$cut) / $cut
+    // grid-auto-rows: calc(calc(var(--gap) + var(--brick) - var(--gap)*var(--cut)) / var(--cut))
+
+.mason-vertical > *
+    // --brick-span: calc(var(--span-b) * var(--cut) + var(--span-c))
+    // grid-row-end: span $cut
+    grid-row-end: span calc(var(--span-b) * var(--cut) + var(--span-c))
+    // grid-row-end: span var(--brick-span)

@@ -1,0 +1,31 @@
+
+$brick: 6rem !default
+$cut: 2 !default
+$gap: 1rem !default
+
+.mason-horizontal
+
+    $cut-brick-size: $brick / $cut
+    $cut-brick-column: ()
+
+    @for $c from 1 through $cut
+        $cut-brick-column: (#{$cut-brick-column} $brick / $cut)
+
+    // grid-template-columns: repeat(auto-fill, #{$cut-brick-column}) 
+    grid-template-columns: repeat(auto-fill, #{$cut-brick-size}) 
+    grid-auto-rows: $brick
+
+.mason-horizontal > *
+    --span-total: calc(var(--span-b) * var(--cut) + var(--span-c))
+    // grid-column-end: span $cut
+    grid-column-end: span var(--span-total)
+
+@media (max-width: #{$brick*2 + $gap*$cut})
+    .mason-horizontal.mason-auto > *:nth-child(2n)
+        --span-c: 0
+    .mason-horizontal.mason-auto > *:nth-child(4n)
+        --span-c: 0
+    .mason-horizontal.mason-auto > *:nth-child(5n)
+        --span-c: 0
+    .mason-horizontal
+        grid-template-columns: 1fr 
