@@ -8,13 +8,15 @@
   <style>
     body {
       background-color: #000000;
-      color: #fff
+      color: #fff;
+      font-size: 1.2rem;
     }
     .grid {
       display: grid;
-      gap: 1em;
-      grid-auto-columns: 10rem;
+      gap: 3rem;
+      grid-auto-columns: 1fr;
       grid-auto-flow: column;
+      margin: 2rem;
     }
     svg {
       transition: transform 150ms ease;
@@ -28,6 +30,10 @@
 <body>
   <div>
     <h1>Test: Animating Masked Svg Images</h1>
+    <p>Sadly this appears to be a expensive solution.
+      All 4 cpu cores run up to 40%. Sill Cool tho.
+      I think a gif type video would be more efficient. perhaps webP
+    </p>
     <div class="grid">
       <svg
         viewBox="0 0 127 190.5"
@@ -60,17 +66,24 @@
             x="0"
             >
             <animate
-              id="swipe-anim-1"
+              id="slide-anim-1"
               attributeName="y"
               dur="15s" 
-              begin="mouseover"
+              begin="mouseover + 100ms"
               end="mouseout"
               repeatCount="indefinite"
-              calcMode="spline"
-              values=  "0 ; -500 ; -2005" 
-              keyTimes="0 ; 0.20 ; 1"
-              keySplines=".2 0 .5 .8 ; 0 0 1 1"
+              from="0"
+              to="-2000"
               end="mouseover"
+              fill="freeze"
+              />
+            <animate
+              id="reset-side-anim-1"
+              begin="slide-anim-1.end + 180ms"
+              to="0"
+              dur="300ms"
+              attributeName="y"
+              repeatCount="1"
               fill="freeze"
               />
           </image>
@@ -110,19 +123,20 @@
             >
             <!-- Fixed Slide Distance, Repeat distance -->
             <!-- viewBox hight = - slide distance -->
-            <!-- Image hight . duration -->
+            <!-- Image hight: IH . duration: D. ViewBox Hight: VH -->
+            <!-- IH / VH * D = max -->
             <animate
               id="swipe-anim-2"
               attributeName="y"
-              dur="2s" 
+              dur="1s" 
               begin="mouseover"
               end="mouseout"
-              max="20s"
+              max="10s"
               repeatCount="indefinite"
               calcMode="spline"
-              values=  "0 ; -20; -190.5 " 
-              keyTimes="0 ; 0.3 ; 1"
-              keySplines="0 0 1 1 ; 0.2 0 0.2 1"
+              values=  "0 ; -190.5" 
+              keyTimes="0 ; 1"
+              keySplines=".3 .1 .7 .9"
               accumulate="sum"
               fill="freeze"
               />
@@ -215,7 +229,7 @@
             x="0"
             >
             <animate
-              id="swipe-anim-1"
+              id="swipe-anim-2"
               attributeName="y"
               dur="12s" 
               begin="mouseover"
