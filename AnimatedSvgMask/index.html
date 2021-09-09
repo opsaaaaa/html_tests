@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: #000000;
+      color: #fff
+    }
+    .grid {
+      display: grid;
+      gap: 1em;
+      grid-auto-columns: 10rem;
+      grid-auto-flow: column;
+    }
+    svg {
+      transition: transform 150ms ease;
+    }
+    svg:hover {
+      transform: scale(1.1);
+
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>Test: Animating Masked Svg Images</h1>
+    <div class="grid">
+      <svg
+        viewBox="0 0 127 190.5"
+        >
+        <defs
+          id="defs2">
+          <clipPath
+          clipPathUnits="userSpaceOnUse"
+          id="clipPath1331">
+          <rect
+            id="rect1333"
+            width="127"
+            height="190.5"
+            x="0"
+            y="0"
+            rx="30"
+            ry="30" />
+          </clipPath>
+        </defs> 
+          <g
+          id="layer1"
+          clip-path="url(#clipPath1331)" 
+          >
+          <image
+            width="127"
+            height="2195.5125"
+            preserveAspectRatio="none"
+            xlink:href="randoatricle.png"
+            id="image1081"
+            x="0"
+            >
+            <animate
+              id="swipe-anim-1"
+              attributeName="y"
+              dur="15s" 
+              begin="mouseover"
+              end="mouseout"
+              repeatCount="indefinite"
+              calcMode="spline"
+              values=  "0 ; -500 ; -2005" 
+              keyTimes="0 ; 0.20 ; 1"
+              keySplines=".2 0 .5 .8 ; 0 0 1 1"
+              end="mouseover"
+              fill="freeze"
+              />
+          </image>
+        </g>
+      </svg>
+
+      
+      <svg
+        viewBox="0 0 127 190.5"
+        >
+        <defs
+          id="defs2">
+          <clipPath
+          clipPathUnits="userSpaceOnUse"
+          id="clipPath1331">
+          <rect
+            id="rect1333"
+            width="127"
+            height="190.5"
+            x="0"
+            y="0"
+            rx="30"
+            ry="30" />
+          </clipPath>
+        </defs> 
+          <g
+          id="layer1"
+          clip-path="url(#clipPath1331)" 
+          >
+          <image
+            width="127"
+            height="2195.5125"
+            preserveAspectRatio="none"
+            xlink:href="randoatricle.png"
+            id="image1081"
+            x="0"
+            >
+            <!-- Fixed Slide Distance, Repeat distance -->
+            <!-- viewBox hight = - slide distance -->
+            <!-- Image hight . duration -->
+            <animate
+              id="swipe-anim-2"
+              attributeName="y"
+              dur="2s" 
+              begin="mouseover"
+              end="mouseout"
+              max="20s"
+              repeatCount="indefinite"
+              calcMode="spline"
+              values=  "0 ; -20; -190.5 " 
+              keyTimes="0 ; 0.3 ; 1"
+              keySplines="0 0 1 1 ; 0.2 0 0.2 1"
+              accumulate="sum"
+              fill="freeze"
+              />
+          </image>
+        </g>
+      </svg>
+
+
+      
+      <svg
+        viewBox="0 0 127 190.5"
+        >
+        <defs
+          id="defs2">
+          <clipPath
+          clipPathUnits="userSpaceOnUse"
+          id="clipPath1331">
+          <rect
+            id="rect1333"
+            width="127"
+            height="190.5"
+            x="0"
+            y="0"
+            rx="30"
+            ry="30" />
+          </clipPath>
+        </defs> 
+          <g
+          id="layer1"
+          clip-path="url(#clipPath1331)" 
+          >
+          <image
+            width="127"
+            height="2195.5125"
+            preserveAspectRatio="none"
+            xlink:href="randoatricle.png"
+            id="image1081"
+            x="0"
+            >
+            <!-- H = Image Height, J = Slide Distance -->
+            <!-- max = (H/J)*dur -->
+            <!-- We want it too take a max of 5 slides -->
+            <!-- H / S -->
+            <!-- Fixed Repeat count -->
+            <animate
+              id="swipe-anim-2"
+              attributeName="y"
+              dur="3s" 
+              begin="mouseover"
+              end="mouseout"
+              repeatCount="5"
+              calcMode="spline"
+              values=  "0 ; -400" 
+              keyTimes="0 ; 1"
+              keySplines=".3 .1 .7 .9"
+              accumulate="sum"
+              />
+          </image>
+        </g>
+      </svg>
+
+      <svg
+        viewBox="0 0 127 190.5"
+        >
+        <defs
+          id="defs2">
+          <clipPath
+          clipPathUnits="userSpaceOnUse"
+          id="clipPath1331">
+          <rect
+            id="rect1333"
+            width="127"
+            height="190.5"
+            x="0"
+            y="0"
+            rx="30"
+            ry="30" />
+          </clipPath>
+        </defs> 
+          <g
+          id="layer1"
+          clip-path="url(#clipPath1331)" 
+          >
+          <image
+            width="127"
+            height="2195.5125"
+            preserveAspectRatio="none"
+            xlink:href="randoatricle.png"
+            id="image1081"
+            x="0"
+            >
+            <animate
+              id="swipe-anim-1"
+              attributeName="y"
+              dur="12s" 
+              begin="mouseover"
+              end="mouseout"
+              repeatCount="indefinite"
+              calcMode="spline"
+              values=  "0 ; -2005" 
+              keyTimes="0 ; 1"
+              keySplines=".1 0 .9 1"
+              end="mouseover"
+              fill="freeze"
+              />
+          </image>
+        </g>
+      </svg>
+
+    </div>
+  </div>   
+
+</body>
+</html>

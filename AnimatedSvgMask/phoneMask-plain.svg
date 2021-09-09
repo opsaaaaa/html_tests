@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="480"
+   height="720"
+   viewBox="0 0 127 190.5"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="phoneMask-plain.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs2">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1701">
+      <rect
+         style="fill:#b94b3a;stroke-width:0.19723;-inkscape-stroke:none;paint-order:markers fill stroke;stop-color:#000000"
+         id="rect1703"
+         width="127"
+         height="190.5"
+         x="0"
+         y="0"
+         rx="29.586712"
+         ry="29.586712" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#808080"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.45254834"
+     inkscape:cx="178.9864"
+     inkscape:cy="104.96116"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:showpageshadow="false"
+     inkscape:pagecheckerboard="true"
+     units="px"
+     width="720px"
+     inkscape:window-width="1920"
+     inkscape:window-height="1016"
+     inkscape:window-x="3840"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-paths="true"
+     inkscape:bbox-nodes="true"
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:snap-page="true" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <image
+       width="127"
+       height="2195.5125"
+       preserveAspectRatio="none"
+       xlink:href="randoatricle.png"
+       id="image1081"
+       x="0"
+       y="-2005.0125"
+       clip-path="url(#clipPath1701)" />
+    <rect
+       style="fill:#b94b3a;stroke-width:0.224366;-inkscape-stroke:none;paint-order:markers fill stroke;stop-color:#000000"
+       id="rect1389"
+       width="126.06425"
+       height="189.06985"
+       x="141.56375"
+       y="0.074701376"
+       rx="36.048351"
+       ry="31.425137" />
+  </g>
+</svg>
