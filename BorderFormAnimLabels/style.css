@@ -4,6 +4,7 @@ body {
   margin: 0;
   padding: 0;
   --scribe-focus: #60e0ec;
+  max-width: unset;
 }
 
 * {
@@ -74,6 +75,11 @@ body {
 input, textarea, select {
   color: #fff;
   background-color: #0000;
+}
+
+option, optgroup, datalist {
+  color: #fff;
+  background-color: #000;
 }
 
 .form-group > input, .form-group > textarea, .form-group > select {
