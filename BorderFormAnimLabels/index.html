@@ -19,7 +19,7 @@
 
 
         <form action="#" method="post">
-            <div class="form-group">
+            <div class="form-group form-group-anim">
                 <input 
                     type="text" 
                     placeholder="Bob Ross"
@@ -29,7 +29,7 @@
                 <label for="contact__name">Name</label>
             </div>
 
-            <div class="form-group">
+            <div class="form-group form-group-anim">
                 <input 
                     type="email" 
                     placeholder="mail@example.com"
@@ -39,7 +39,7 @@
                 <label for="contact__email">Email</label>
             </div>
 
-            <div class="form-group">
+            <div class="form-group form-group-anim">
                 <textarea 
                     placeholder="A cute message"    
                     name="message" 
@@ -52,5 +52,210 @@
 
         </form>
     </main>
+    <section class="container">
+        <form>
+            <h1>Post</h1>
+            <!-- TITLE -->
+            <div class="form-group">
+                <input
+                    name="title" 
+                    placeholder="title" 
+                    type="text" 
+                    value=""/>
+                <label for="title">Title</label>
+            </div>
+            
+            <!-- DISCRIPTION -->
+            <div class="form-group">
+                <textarea
+                    id="post__discription"
+                    placeholder="Something cute"
+                    name="description" 
+                    rows="10" 
+                    cols="30"
+                    ></textarea>
+                <label for="post__discription">Discription</label>
+            </div>
+
+        </form>
+
+        <div>
+            <h1>Select</h1>
+
+            <!-- FOODS -->
+            <div class="form-group">
+                <select 
+                    name="select"
+                    placeholder="--select--"
+                    value=""
+                    >
+                    <optgroup label="Vegitables"></option>
+                    <option>Potato</option>
+                    <option>Carrot</option>
+                    <option>Celory</option>
+                    </optgroup>
+                    <optgroup label="Fruits">
+                    <option>Apple</option>
+                    <option>Melon</option>
+                    </optgroup>
+                    <optgroup label="Meets">
+                    <option>Beef</option>
+                    <option>Pork</option>
+                    <option>Chicken</option>
+                    </optgroup>
+                </select>
+                <label for="select">Food</label>
+            </div>
+
+            <!-- SEARCH -->
+            <div class="form-group">
+            <input 
+                list="search"
+                placeholder=" " 
+                type="search" 
+                name="search"
+                />
+            <label for="search">Search</label>
+            <datalist id="search">
+                <option value="one"></option>
+                <option value="two"></option>
+                <option value="three"></option>
+                <option value="four"></option>
+                <option value="five"></option>
+                <option value="six"></option>
+            </datalist>
+            </div>
+
+        </div>
+
+        <!-- DISABLED -->
+        <div>
+            <h1>Disabled</h1>
+            <div class="form-group">
+                <input
+                    disabled 
+                    name="d-title" 
+                    placeholder=" "
+                    type="text"
+                    value="Disabled Title"
+                    />
+                <label for="d-title">Title</label>
+            </div>
+            <div class="form-group">
+                <textarea
+                    disabled
+                    placeholder=" "
+                    name="d-discription" 
+                    rows="10" 
+                    >This Area Is Disabled</textarea>
+                <label for="d-discription">Discription</label>
+            </div>
+            <div class="form-group">
+            <select
+                disabled
+                name="d-select">
+                <option value="1">one</option>
+                <option value="2">two</option>
+                <option value="3">three</option>
+                <option value="4">four</option>
+            </select>
+            <label for="d-select">Select</label>
+            </div>
+        </div>
+
+
+
+        <!-- LOGIN -->
+        <div>
+            <h1>Login</h1>
+            <div class="form-group">
+                <input 
+                    type="email" 
+                    placeholder="you@example.com" 
+                    required
+                    />
+                <label for="email">Email</label>
+            </div>
+            <div class="form-group">
+                <input 
+                    type="password"
+                    placeholder=" " 
+                    required
+                    />
+                <label for="password">Password</label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Login"/>
+            </div>
+        </div>
+
+        <!-- NUMBERS -->
+        <div>
+            <h1>Numbers</h1>
+            <div class="form-group">
+                <input type="time" name="time"/>
+                <label for="time">Time</label>
+            </div>
+            <div class="form-group">
+                <input name="number" type="number" value="7" placeholder=" "/>
+                <label for="number">Number</label>
+            </div>
+            <div class="form-group">
+                <input 
+                    type="tel" 
+                    name="phone"
+                    placeholder="888-888-8888"
+                    value=""/>
+                <label for="phone">Phone Number</label>
+            </div>
+        </div>
+
+        <div>
+            <h1>Misc</h1>
+            <!-- RANGE -->
+            <div class="form-group">
+                <label for="range">Range</label>
+                <div>
+                    <input type="range" value="etc" name="range"/>
+                </div>
+            </div>
+
+            <!-- RADIO -->
+            <div class="form-group">
+                <label for="gender">Radio</label>
+                <div class="radio-options">
+                    <input type="radio" id="gender__male" name="gender" value="male"/>
+                    <label for="gender__male">Male</label>
+                    <input type="radio" id="gender__female" name="gender" value="female"/>
+                    <label for="gender__female">Female</label>
+                    <input type="radio" id="gender__other" name="gender" value="other"/>
+                    <label for="gender__other">Other</label>
+                </div>
+            </div>
+            
+            <!-- RADIO -->
+            <div class="form-group">
+                <label for="agree">Checkbox</label>
+                <div class="checkbox-options">
+                    <input id="terms__agree" type="checkbox" name="agree" value="Bike">
+                    <label for="terms__agree">I agree to the terms</label>
+                </div>
+            </div>
+
+        </div>
+
+        <div>
+            <h1>Buttons</h1>
+            <!-- RANGE -->
+            <div class="form-group">
+            <input type="submit" value="Submit"/>
+            <input type="button" value="Button"/>
+            <button type="button" value="Button">Button</button>
+            <input type="file" value="File"/>
+            </div>
+
+
+        </div>
+    </section>
 </body>
 </html>

@@ -34,57 +34,97 @@ body
 
 .form-group > label
     display: block
-
-    color: #fff8
     font-weight: bold
 
-    background-color: var(--form-bg , #000)
-    padding: 0 1em
-    
-    position: absolute
-    top: calc(var(--pad-y) - 2px)
-    left: 1px
-
-    transition: transform 200ms ease
-
 .form-group
+    & > input + label,
+    & > textarea + label,
+    & > select + label
+
+
+        background-color: var(--form-bg , #000)
+        padding: 0 1em
+        
+        position: absolute
+        top: calc(var(--line) / 2 * -1 )
+        left: var(--pad-x , 1em)
+
+        // top: calc(var(--pad-y) - 2px)
+        // left: 1px
+
+        transition: top 200ms ease, left 150ms ease
+
+.form-group-anim
+    & > input + label,
+    & > textarea + label,
+    & > select + label
+        top: calc(var(--pad-y) - 2px)
+        left: 1px
+        color: #fff8
+        // top: translate()
+
     & > :not(:placeholder-shown) + label,
     &:focus-within > label,
-    & > :hover + label
-        transform: translate(var(--pad-x) ,calc(var(--pad-y) * -1 - var(--line) / 2 ))
+    &:hover > label,
+    & > :disabled + label
+        top: calc(var(--line) / 2 * -1 )
+        left: var(--pad-x , 1em)
+        // transform: translate(var(--pad-x) ,calc(var(--pad-y) * -1 - var(--line) / 2 ))
         color: #fff
-
-
-
-.form-group
 
 
 // Placeholder
 
-.form-group 
+.form-group-anim
     & > ::placeholder
         opacity: 0
     & > :focus::placeholder,
-    & > :hover::placeholder
+    &:hover > ::placeholder
         opacity: 1
 
 // Focus Color
 
 .form-group
-    & > *:focus
+    & *:focus
         border-color: var(--scribe-focus)
         outline: none
-    &:focus-within > label
+    & *:focus + label
         color: var(--scribe-focus)
+
+
 
 // Input Styleing
 
-input, textarea
+input, textarea, select
     color: #fff
-    border: 1px solid #fff
-    border-radius: .4rem
-    padding: var(--pad-y) var(--pad-x)
-    width: 100%
     background-color: #0000
 
+.form-group
+    & > input, 
+    & > textarea, 
+    & > select
+        border: 1px solid #fff
+        border-radius: .4rem
+        padding: var(--pad-y) var(--pad-x)
+        width: 100%
+// Radio and Checkbox
 
+input[type="checkbox"],
+input[type="radio"]
+    width: max-content
+    display: inline-block
+    & + label
+        margin-right: 1em
+        display: inline-block
+    &:checked + label
+        color: var(--scribe-focus)
+
+
+// Disabled Color
+
+.form-group
+    & > :disabled
+        border-color: var(--scribe-disabled , #888)
+        color: var(--scribe-disabled , #888)
+    & > :disabled + label
+        color: var(--scribe-disabled , #888)
