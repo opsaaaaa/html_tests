@@ -34,7 +34,6 @@ body {
 
 .form-group > label {
   display: block;
-  font-weight: bold;
 }
 
 .form-group > input + label, .form-group > textarea + label, .form-group > select + label {
