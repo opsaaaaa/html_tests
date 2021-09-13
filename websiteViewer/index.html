@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script type="module" src="index.js"></script>
+</head>
+<body class="vbox">
+    <header class="container">
+        <h1>Website Viewer</h1>
+    </header>
+
+    <main class="gbox">
+        <figure id="site-viewer" class="vbox">
+            <div>
+                <button>Desktop</button>
+                <button>Phone</button>
+                <button>Tablet</button>
+            </div>
+            <div class="site-viewer-box site-viewer-desktop">
+                <div class="site-viewer-content">
+                    <div class="embed-content">
+                        <iframe 
+                            src="http://blenderletsplay.com" 
+                            frameborder="0"
+                            width="1920"
+                            height="1080"
+                            ></iframe>
+                    </div>
+                </div>
+            </div>
+        </figure>
+    </main>
+</body>
+</html>

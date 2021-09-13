@@ -1,0 +1,89 @@
+@use 'sass:math'
+    
+\*
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+
+body
+    background-color: #000
+    color: #fff
+
+*:focus
+    outline: #6af
+
+button
+    font-size: 1rem
+    font-weight: bold
+    color: #000
+    background-color: #fff
+    padding: .4em .4em
+    border: none
+    border-radius: .2em
+button:hover
+    background-color: #888
+
+.container
+    max-width: 60em
+    margin: 0 auto
+
+.gbox
+    margin: 0 10em
+
+.vbox > * + *
+    margin-top: 2em
+
+$radius: .5em
+$padding: .8em
+.site-viewer-box
+    border: 1px solid #fff
+    padding: $padding
+    border-radius: $radius
+
+.site-viewer-content
+    $aspect: math.div( 9, 16 )
+    $width: 100%
+    width: $width
+    height: 0
+    padding-bottom: calc( #{$width} * #{$aspect} )
+    background-color: #444
+    border-radius: $radius
+    position: relative
+    & > *:first-child
+        position: absolute
+        inset: 0
+        width: 100%
+        height: 100%
+        overflow: hidden
+    iframe
+        border-radius: $radius
+        max-width: 100%
+        max-height: 100% 
+
+@mixin cir($diameter)
+    border: 1px solid #fff
+    width: $diameter
+    height: $diameter
+    border-radius: $diameter
+
+.site-viewer-desktop
+    $side-padding: 2em
+    $cir-size: 1.5em 
+    position: relative
+    padding-bottom: $padding * 2 + $cir-size
+    &::after
+        @include cir($cir-size)
+        content: " "
+        position: absolute
+        bottom: $padding
+        right: $padding
+    &::before
+        @include cir(1em)
+        content: " "
+        position: absolute
+        bottom: $padding
+        right: $cir-size + $padding * 2
+
+        
+
+
