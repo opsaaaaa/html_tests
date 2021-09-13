@@ -1,5 +1,12 @@
 @use 'sass:math'
-    
+
+
+@mixin cir($diameter)
+    border: 1px solid #fff
+    width: $diameter
+    height: $diameter
+    border-radius: $diameter
+
 \*
     box-sizing: border-box
     margin: 0
@@ -20,33 +27,57 @@ button
     padding: .4em .4em
     border: none
     border-radius: .2em
-button:hover
+button:hover, button[selected]
     background-color: #888
 
 .container
     max-width: 60em
     margin: 0 auto
 
-.gbox
-    margin: 0 10em
+.screen-box
+    margin: auto
+    width: max-content
 
 .vbox > * + *
     margin-top: 2em
 
+
+
 $radius: .5em
 $padding: .8em
-.site-viewer-box
+
+[site-viewer]
+    --h-aspect: 1
+    position: relative
     border: 1px solid #fff
     padding: $padding
     border-radius: $radius
+    &::after, &::before 
+        content: " "
+        position: absolute
+    iframe
+        max-width: 100%
+        max-height: 100%
+        object-fit: scale-down
+        // object-position: center
+        // object-fit: fill
+        // object-position: center
 
-.site-viewer-content
-    $aspect: math.div( 9, 16 )
+.sv-content
+    background-color: #444
+    border-radius: $radius
+    max-width: 100%
+    max-height: 100% 
+    // overflow: hidden
+    object-fit: scale-down
+
+
+
+.sv-content-box
     $width: 100%
     width: $width
     height: 0
-    padding-bottom: calc( #{$width} * #{$aspect} )
-    background-color: #444
+    padding-bottom: calc( #{$width} * var(--h-aspect) )
     border-radius: $radius
     position: relative
     & > *:first-child
@@ -54,36 +85,52 @@ $padding: .8em
         inset: 0
         width: 100%
         height: 100%
-        overflow: hidden
-    iframe
-        border-radius: $radius
-        max-width: 100%
-        max-height: 100% 
 
-@mixin cir($diameter)
-    border: 1px solid #fff
-    width: $diameter
-    height: $diameter
-    border-radius: $diameter
 
-.site-viewer-desktop
-    $side-padding: 2em
+
+// [site-viewer]:not([site-viewer="custom"])
+
+
+[site-viewer="desktop"]
     $cir-size: 1.5em 
-    position: relative
+    width: 80em
+    --h-aspect: #{math.div( 9, 16 )}
+    $side-padding: 2em
     padding-bottom: $padding * 2 + $cir-size
     &::after
         @include cir($cir-size)
-        content: " "
-        position: absolute
         bottom: $padding
         right: $padding
     &::before
         @include cir(1em)
-        content: " "
-        position: absolute
         bottom: $padding
         right: $cir-size + $padding * 2
 
         
+[site-viewer="phone"]
+    $cir-size: 3em 
+    width: 26em
+    --h-aspect: #{math.div( 16, 9 )}
+    $side-padding: 2em
+    padding-bottom: $padding * 2 + $cir-size
+    &::after
+        @include cir($cir-size)
+        bottom: $padding
+        right: $padding
+        left: $padding
+        margin-left: auto 
+        margin-right: auto 
 
-
+[site-viewer="tablet"]
+    $cir-size: 3em 
+    width: 62em
+    --h-aspect: #{math.div( 3, 4 )}
+    $side-padding: 2em
+    padding-right: $padding * 2 + $cir-size
+    &::after
+        @include cir($cir-size)
+        bottom: $padding
+        right: $padding
+        top: $padding
+        margin-top: auto 
+        margin-bottom: auto 

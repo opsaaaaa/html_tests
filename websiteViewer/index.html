@@ -9,31 +9,53 @@
     <script src="node_modules/vue/dist/vue.js"></script>
     <script type="module" src="index.js"></script>
 </head>
-<body class="vbox">
-    <header class="container">
-        <h1>Website Viewer</h1>
-    </header>
+<body>
+    <div id="site-viewer" class="vbox">
 
-    <main class="gbox">
-        <figure id="site-viewer" class="vbox">
+        <header class="container">
+            <h1>Website Viewer</h1>
             <div>
-                <button>Desktop</button>
-                <button>Phone</button>
-                <button>Tablet</button>
+                <button
+                    :selected="devise == 'desktop'" 
+                    v-on:click="devise = 'desktop'"
+                    >Desktop</button>
+                <button 
+                    :selected="devise == 'phone'" 
+                    v-on:click="devise = 'phone'"
+                    >Phone</button>
+                <button 
+                    :selected="devise == 'tablet'" 
+                    v-on:click="devise = 'tablet'"
+                    >Tablet</button>
+                <button 
+                    :selected="devise == 'custom'" 
+                    v-on:click="devise = 'custom'"
+                    >custom</button>
             </div>
-            <div class="site-viewer-box site-viewer-desktop">
-                <div class="site-viewer-content">
-                    <div class="embed-content">
+        </header>
+
+        <main class="screen-box">
+            <figure :site-viewer="devise">
+                <div class="sv-content-box">
+                    <div class="sv-content">
                         <iframe 
                             src="http://blenderletsplay.com" 
                             frameborder="0"
                             width="1920"
                             height="1080"
-                            ></iframe>
+                        ></iframe>
                     </div>
                 </div>
-            </div>
-        </figure>
-    </main>
+                <!-- <div class="site-viewer-box site-viewer-desktop">
+                    <div class="site-viewer-content">
+                        <div class="embed-content">
+
+                        </div>
+                    </div>
+                </div> -->
+            </figure>
+                            
+        </main>
+    </div>
 </body>
 </html>

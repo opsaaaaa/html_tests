@@ -7,7 +7,7 @@ window.addEventListener('load', function(){
     var app = new Vue({
         el: '#site-viewer',
         data: {
-            message: 'Hello Vue!'
+            devise: 'desktop'
         }
     })
 }, false)
