@@ -7,7 +7,7 @@
 		body {
 			background: #000;
 			color: #fff;
-			margin: 0 auto;
+			width: 100vw;
 		}
 		body * {
 			color: inherit;
@@ -15,7 +15,8 @@
 		}
 		.reader-wrapper {
 			position: relative;
-			padding: .5em;
+			max-width: 30rem;
+			margin: 0 auto;
 		}
 		.arrow {
 			background: none;
@@ -62,7 +63,7 @@
 	var rendition = book.renderTo("reader", {
 		manager: "continuous",
 		flow: "paginated",
-		width: '100%', 
+		width: '30em', 
 		height: '100vh', 
 		"allowScriptedContent": true
 	});
