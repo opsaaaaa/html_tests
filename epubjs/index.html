@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style> 
+		body {
+			background: #000;
+			color: #fff;
+			margin: 0 auto;
+		}
+		body * {
+			color: inherit;
+			background: inherit;
+		}
+		.reader-wrapper {
+			position: relative;
+			padding: .5em;
+		}
+		.arrow {
+			background: none;
+			border: none;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			min-width: 4rem;
+		}
+		.arrow:hover {
+			cursor: pointer;
+		}
+		#reader {
+			height: 100vh;
+			pointer-events: none;
+		}
+		#prev {
+			left: 0;
+			text-align: left;
+		}
+		#next {
+			right: 0;
+			text-align: right;
+		}
+	</style>
+
+</head>
+<body>
+
+<h1>Something</h1>
+
+<div class="reader-wrapper">
+	<div id="reader"></div>
+	<button id="prev" class="arrow">‹</button>
+	<button id="next" class="arrow">›</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.5/jszip.min.js"></script>
+<script src="/epub.js"></script>
+
+<script>
+
+	var book = ePub("/just_poor.epub");
+	var rendition = book.renderTo("reader", {
+		manager: "continuous",
+		flow: "paginated",
+		width: '100%', 
+		height: '100vh', 
+		"allowScriptedContent": true
+	});
+	console.log(rendition);
+
+
+	var bookStyle = document.getElementById('book-style')
+	var displayed = rendition.display();
+	
+	var next = document.getElementById("next");
+	next.addEventListener("click", function(){
+		rendition.next();
+	}, false);
+
+	var prev = document.getElementById("prev");
+	prev.addEventListener("click", function(){
+		rendition.prev();
+	}, false);
+
+	rendition.themes.register("dark", "themes.css");
+	rendition.themes.register("light", "themes.css");
+
+	mm = window.matchMedia("(prefers-color-scheme: dark)")
+
+	rendition.themes.select(mm.matches ? 'dark': 'light');	
+	console.log(mm)
+
+	mm.addListener(e => {
+		rendition.themes.select(e.matches ? 'dark' : 'light')
+	});
+
+	rendition.themes.default({
+		p: {
+			'text-indent': '2em'
+		},
+	});
+
+
+    // $(window).on( "swipeleft", function( event ) {
+    //   rendition.next();
+    // });
+    //
+    // $(window).on( "swiperight", function( event ) {
+    //   rendition.prev();
+    // });
+
+</script>
+
+</body>
+</html>
+
+
