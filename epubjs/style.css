@@ -1,0 +1,94 @@
+body {
+	background: #fff;
+	color: #000;
+} 
+
+
+@media (prefers-color-scheme: dark) {
+	body {
+		background: #000;
+		color: #fff;
+	} 
+}
+
+body {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+body * {
+	color: inherit;
+	background: inherit;
+	box-sizing: border-box;
+}
+
+.hbox {
+	display: grid;
+	grid-auto-flow: column;
+}
+
+.reader-wrapper {
+	width: 30em;
+	margin: 0 auto;
+	height: 100vh;
+}
+#reader {
+	height: calc(100% - 3em);
+}
+/* #reader { */
+/* 	height: 100vh; */
+/* } */
+/* .reader-wrapper > * { */
+/* 	display: block; */
+/* } */
+
+@media only screen and (max-width: 35rem) {
+	.reader-wrapper {
+		width: 100%;
+	}
+}
+@media only screen and (min-width: 58rem) {
+	.reader-wrapper {
+		width: 45em
+	}
+}
+@media only screen and (min-width: 70rem) {
+	.reader-wrapper {
+		width: 70em
+	}
+}
+
+.arrow-box {
+	height: 3em;
+}
+
+.arrow {
+	padding: auto 0;
+	font-size: 1.5rem;
+	background: none;
+	border: none;
+	border: solid 1px #0000000;
+  z-index: 1;
+	/* position: absolute; */
+	/* top: 0; */
+	/* bottom: 0; */
+}
+.arrow + .arrow {
+	border-left: solid 1px currentColor;
+}
+.arrow:hover {
+  cursor: pointer;
+}
+/* #reader { */
+/* 	height: 100vh; */
+/* 	pointer-events: none; */
+/* } */
+/* #prev { */
+/* 	left: 0; */
+/* 	text-align: left; */
+/* } */
+/* #next { */
+/* 	right: 0; */
+/* 	text-align: right; */
+/* } */
+

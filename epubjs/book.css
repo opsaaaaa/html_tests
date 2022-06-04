@@ -1,0 +1,53 @@
+body {
+	background: #fff;
+	color: #000;
+}
+@media (prefers-color-scheme: dark) {
+	body {
+		background: #000;
+		color: #fff
+	}
+}
+
+
+/* DO FIXES ?*/
+body {
+	word-break: break-word;
+	hyphens: auto;
+	line-height: 1.5em
+	
+}
+
+p {
+    text-align: justify!important;
+    text-indent: 2em;
+    margin-top: .6em;
+    margin-bottom: .6em;
+}
+
+/* Fix Letters and instory writen content */
+p[style*="margin-left:"]:not([style*="margin-left:0"]) {
+    margin-left: 1.5em!important;
+    margin-right: 1.5em!important;
+}
+
+/* .main p, .main span { */
+/* 	font-size: inherit!important; */
+/* } */
+
+/* .main { font-size: 12px; } */
+/* @media (min-width: 20rem) { */
+/* 	.main { font-size: 12px; } */
+/* } */
+/* @media (min-width: 32rem) { */
+/* 	.main { font-size: 14px; } */
+/* } */
+/* @media (min-width: 58rem) { */
+/* 	.main { font-size: 16px; } */
+/* } */
+/* @media (min-width: 70rem) { */
+/* 	.main { font-size: 18px; } */
+/* } */
+
+
+

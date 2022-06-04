@@ -1,47 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title></title>
-	<style> 
-		body {
-			background: #000;
-			color: #fff;
-			width: 100vw;
-		}
-		body * {
-			color: inherit;
-			background: inherit;
-		}
-		.reader-wrapper {
-			position: relative;
-			max-width: 30rem;
-			margin: 0 auto;
-		}
-		.arrow {
-			background: none;
-			border: none;
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			min-width: 4rem;
-		}
-		.arrow:hover {
-			cursor: pointer;
-		}
-		#reader {
-			height: 100vh;
-			pointer-events: none;
-		}
-		#prev {
-			left: 0;
-			text-align: left;
-		}
-		#next {
-			right: 0;
-			text-align: right;
-		}
-	</style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="/style.css">
+  <title>Document</title>
+
+  <meta 
+    http-equiv="Content-Type" 
+    content="text/html; charset=UTF-8"
+    >
+
+  <meta 
+    name="viewport" 
+    content="width=device-width, initial-scale=1"
+    >
 
 </head>
 <body>
@@ -50,8 +23,10 @@
 
 <div class="reader-wrapper">
 	<div id="reader"></div>
-	<button id="prev" class="arrow">‹</button>
-	<button id="next" class="arrow">›</button>
+	<div class="hbox arrow-box">
+		<button id="prev" class="arrow">‹</button>
+		<button id="next" class="arrow">›</button>
+	</div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.5/jszip.min.js"></script>
@@ -63,8 +38,8 @@
 	var rendition = book.renderTo("reader", {
 		manager: "continuous",
 		flow: "paginated",
-		width: '30em', 
-		height: '100vh', 
+		width: '100%', 
+		height: '100%', 
 		"allowScriptedContent": true
 	});
 	console.log(rendition);
@@ -83,23 +58,27 @@
 		rendition.prev();
 	}, false);
 
-	rendition.themes.register("dark", "themes.css");
-	rendition.themes.register("light", "themes.css");
+	rendition.themes.default("book.css")
+	
+	// rendition.themes.register("main", "themes.css");
+	// rendition.themes.select('main');	
 
-	mm = window.matchMedia("(prefers-color-scheme: dark)")
+	// Handling Dark and light themes inside js
+	// rendition.themes.register("dark", "themes.css");
+	// rendition.themes.register("light", "themes.css");
+	
+	// mm = window.matchMedia("(prefers-color-scheme: dark)")
 
-	rendition.themes.select(mm.matches ? 'dark': 'light');	
-	console.log(mm)
+	// rendition.themes.select(mm.matches ? 'dark': 'light');	
+	// mm.addListener(e => {
+	//	rendition.themes.select(e.matches ? 'dark' : 'light')
+	// });
 
-	mm.addListener(e => {
-		rendition.themes.select(e.matches ? 'dark' : 'light')
-	});
-
-	rendition.themes.default({
-		p: {
-			'text-indent': '2em'
-		},
-	});
+	// rendition.themes.default({
+	// 	p: {
+	//		'text-indent': '2em'
+	//	},
+	// });
 
 
     // $(window).on( "swipeleft", function( event ) {
