@@ -18,7 +18,7 @@ body {
 	
 }
 
-p {
+p:not(.Header) {
     text-align: justify!important;
     text-indent: 2em;
     margin-top: .6em;

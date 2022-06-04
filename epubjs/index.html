@@ -19,46 +19,41 @@
 </head>
 <body>
 
-<h1>Something</h1>
+<div class="wrapper">
+</div>
 
-<div class="reader-wrapper">
+<div class="reader-wrapper wrapper vh-100">
+	<div class="hbox page-actions">
+		<h1>Book Title</h1>
+		<select 
+			id="toc"
+			class="arrow action"
+			name="menu"
+			>
+		</select>
+	</div>
 	<div id="reader"></div>
-	<div class="hbox arrow-box">
-		<button id="prev" class="arrow">‹</button>
-		<button id="next" class="arrow">›</button>
+	<div class="hbox page-actions">
+		<button
+			id="prev"
+			name="previous"
+			class="arrow action"
+			>‹
+		</button>
+		<button
+			id="next"
+			name="next"
+			class="arrow action"
+			>›
+		</button>
 	</div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.5/jszip.min.js"></script>
 <script src="/epub.js"></script>
+<script src="/index.js"></script>
 
 <script>
-
-	var book = ePub("/just_poor.epub");
-	var rendition = book.renderTo("reader", {
-		manager: "continuous",
-		flow: "paginated",
-		width: '100%', 
-		height: '100%', 
-		"allowScriptedContent": true
-	});
-	console.log(rendition);
-
-
-	var bookStyle = document.getElementById('book-style')
-	var displayed = rendition.display();
-	
-	var next = document.getElementById("next");
-	next.addEventListener("click", function(){
-		rendition.next();
-	}, false);
-
-	var prev = document.getElementById("prev");
-	prev.addEventListener("click", function(){
-		rendition.prev();
-	}, false);
-
-	rendition.themes.default("book.css")
 	
 	// rendition.themes.register("main", "themes.css");
 	// rendition.themes.select('main');	
